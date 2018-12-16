@@ -1,0 +1,32 @@
+{
+  "name": "bookbook-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevTeamAcademy/bookbook-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevTeamAcademy/bookbook-website/issues"
+  },
+  "homepage": "https://github.com/DevTeamAcademy/bookbook-website#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "ramda": "^0.26.1",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.2",
+    "styled-system": "^3.1.11"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.9.4"
+  }
+}

@@ -1,18 +1,21 @@
-import React, { Fragment } from 'react'
-import Head from 'next/head'
+import React, { Fragment } from 'react';
+import { withTheme } from 'styled-components';
+// components
+import MainPage from '../components/MainPage';
+// hocs
+import {
+  withPageHead,
+  withGlobalStyles,
+  withThemeProvider,
+  withLocaleProvider } from '../hocs';
 // ui
-import { Title } from '../ui';
-////////////////////////////////////////////////////////////////////////////////
+import { Box } from '../ui';
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const IndexPage = (props) => (
-  <Fragment>
-    <Head>
-      <meta name='viewport' content='width=device-width, initial-scale=1' />
-      {/* <link rel='shortcut icon' href='./static/favicon.png' type='image/x-icon' /> */}
-      <title>BookBook</title>
-    </Head>
-    <Title>Index page here</Title>
-  </Fragment>
-)
+  <MainPage {...props} />
+);
 
-export default IndexPage;
+export default withPageHead({
+  metaTitle: 'BookBook',
+})(withLocaleProvider(withThemeProvider(withGlobalStyles(IndexPage))));

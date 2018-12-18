@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { withTheme } from 'styled-components';
 // components
-import MainPage from '../src/components/MainPage';
+import ContactPage from '../src/components/ContactPage';
 // hocs
 import {
   withPageHead,
@@ -13,7 +13,7 @@ import { Box } from '../src/ui';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const Page = (props) => (
-  <MainPage {...props} />
+  <ContactPage {...props} />
 );
 
 export default withPageHead({

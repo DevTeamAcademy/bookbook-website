@@ -5,10 +5,10 @@ import PageLayout from './PageLayout';
 import { withLocale } from '../hocs';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const MainPage = props => (
+export const TermsPage = props => (
   <PageLayout>
-    <section>{props.locale.home}</section>
+    <section>{props.locale.termsAndConditions}</section>
   </PageLayout>
 );
 
-export default withLocale(MainPage);
+export default withLocale(TermsPage);

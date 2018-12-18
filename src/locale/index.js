@@ -2,18 +2,35 @@
 import * as GC from '../constants';
 // /////////////////////////////////////////////////////////////////////////////////////////////////
 
+// TODO: with all locale and translations
 const locales = {
   [GC.LOCALE_NAME_EN]: {
-    name: 'bookbook content from locale in en',
+    home: 'home',
+    aboutUs: 'about us',
+    contactUs: 'contact us',
+    termsAndConditions: 'terms and conditions',
+    privacyPolicy: 'privacy policy',
   },
   [GC.LOCALE_NAME_UA]: {
-    name: 'bookbook content from locale',
+    home: 'домашня',
+    aboutUs: 'про нас',
+    contactUs: 'наші контакти',
+    termsAndConditions: 'умови використання',
+    privacyPolicy: 'політика приватності',
   },
   [GC.LOCALE_NAME_RU]: {
-    name: 'bookbook content from locale',
+    home: 'home',
+    aboutUs: 'about us',
+    contactUs: 'contact us',
+    termsAndConditions: 'terms and conditions',
+    privacyPolicy: 'privacy policy',
   },
   [GC.LOCALE_NAME_PL]: {
-    name: 'bookbook content from locale',
+    home: 'home',
+    aboutUs: 'about us',
+    contactUs: 'contact us',
+    termsAndConditions: 'terms and conditions',
+    privacyPolicy: 'privacy policy',
   },
 };
 

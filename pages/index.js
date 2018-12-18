@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
 import { withTheme } from 'styled-components';
 // components
-import MainPage from '../components/MainPage';
+import MainPage from '../src/components/MainPage';
 // hocs
 import {
   withPageHead,
   withGlobalStyles,
   withThemeProvider,
-  withLocaleProvider } from '../hocs';
+  withLocaleProvider } from '../src/hocs';
 // ui
-import { Box } from '../ui';
+import { Box } from '../src/ui';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const IndexPage = (props) => (

@@ -5,6 +5,6 @@ export default {
     black: '#000e1a',
     white: '#fff',
     blue: 'blue',
-    navy: '#004175'
-  }
-}
+    navy: '#004175',
+  },
+};

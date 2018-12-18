@@ -1,0 +1,7 @@
+/.git
+/.vscode
+/.next
+out
+pages
+static
+node_modules

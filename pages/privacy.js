@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { withTheme } from 'styled-components';
 // components
-import PrivacyPage from '../src/components/PrivacyPage';
+import PrivacyPage from '../src/pages/PrivacyPage';
 // hocs
 import {
   withPageHead,

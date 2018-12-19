@@ -40,7 +40,7 @@
 
 		"react/require-default-props": "off", // airbnb use error
 		"react/forbid-prop-types": "off", // airbnb use error
-		"react/jsx-filename-extension": ["error", { "extensions": [".js"] }], // airbnb is using .jsx
+		"react/jsx-filename-extension": ["error", { "extensions": [".jsx"] }],
 		"react/destructuring-assignment": "off",
 		"react/no-unused-state": "off",
 		"react/prop-types": "off", // TODO: uncomment after adding prop-types
@@ -55,7 +55,10 @@
 		"react/no-unused-prop-types": "off", // Is still buggy
 		"react/jsx-one-expression-per-line": "off",
 
-		"jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
+		"jsx-quotes": ["error", "prefer-single"],
+
+		// "jsx-a11y/anchor-is-valid": ["error", { "components": ["Link"], "specialLink": ["to"] }],
+		"jsx-a11y/anchor-is-valid": "off",
 		"jsx-a11y/label-has-for": [2, {
 			"required": {
 				"every": ["id"]

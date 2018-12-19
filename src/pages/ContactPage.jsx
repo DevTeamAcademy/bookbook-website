@@ -6,7 +6,7 @@ import { withLocale } from '../hocs';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const ContactPage = props => (
-  <PageLayout>
+  <PageLayout locale={props.locale}>
     <section>{props.locale.contactUs}</section>
   </PageLayout>
 );

@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
+// components
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const PageLayout = props => (
   <Fragment>
-    <header>header</header>
-    <nav>nav</nav>
+    <Header {...props} />
     <div>{props.children}</div>
-    <footer>footer</footer>
+    <Footer {...props} />
   </Fragment>
 );
 

@@ -2,9 +2,6 @@
 
 export default {
   colors: {
-    black: '#000e1a',
-    white: '#fff',
-    blue: 'blue',
-    navy: '#004175',
+    yellow: '#F18701',
   },
 };

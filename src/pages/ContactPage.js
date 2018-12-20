@@ -7,7 +7,7 @@ import { withLocale } from '../hocs';
 
 export const ContactPage = props => (
   <PageLayout locale={props.locale}>
-    <section>{props.locale.contactUs}</section>
+    <section>{props.locale.contacts}</section>
   </PageLayout>
 );
 

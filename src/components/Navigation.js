@@ -11,7 +11,7 @@ export const Navigation = props => (
       <a>{props.locale.aboutUs}</a>
     </Link>
     <Link href='./contact' passHref>
-      <a>{props.locale.contactUs}</a>
+      <a>{props.locale.contacts}</a>
     </Link>
   </nav>
 );

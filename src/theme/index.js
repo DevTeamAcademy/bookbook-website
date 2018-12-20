@@ -2,6 +2,7 @@
 
 export default {
   colors: {
-    yellow: '#F18701',
+    link: '#F18701',
+    popupBg: '#292929',
   },
 };

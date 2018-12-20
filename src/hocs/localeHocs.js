@@ -7,12 +7,11 @@ import locales from '../locale';
 
 const LocaleContext = createContext();
 
+// TODO: set locale to storage and get from there
 class LocaleProvider extends Component {
   constructor(props) {
     super(props);
-
     this.changeLocale = localeName => this.setState({ localeName });
-
     this.state = {
       locales,
       localeName: GC.LOCALE_NAME_EN,
@@ -37,7 +36,6 @@ export const withLocale = BaseComponent => props => (
   </LocaleContext.Consumer>
 );
 
-// TODO: use it to change locale
 export const withChangeLocale = BaseComponent => props => (
   <LocaleContext.Consumer>
     {localeState => <BaseComponent {...props} changeLocale={localeState.changeLocale} />}

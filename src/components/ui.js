@@ -1,31 +1,23 @@
 import styled from 'styled-components';
-import { color, space, width, height, themeGet } from 'styled-system';
+import { themeGet } from 'styled-system';
+// ui
+import { Flex } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
 
-export const Box = styled.div`
-  ${color};
-  ${space};
-  ${width};
-  ${height}
-`;
-
-export const StyledHeader = styled(Box)`
-  display: flex;
-  align-items: center;
-
+export const StyledHeader = styled(Flex)`
   & > a {
+    flex: 0 1 auto;
     height: 35px;
   }
 
-  & > a > img {
-    height: 100%;
+  & > nav {
+    flex: 1 1 auto;
   }
 
   & > nav > a {
     padding: 0px 20px;
-    outline: none;
     text-decoration: none;
     text-transform: uppercase;
-    color: ${themeGet('colors.yellow', 'white')}; 
+    color: ${themeGet('colors.link', 'white')}; 
   }
 `;

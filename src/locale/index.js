@@ -17,15 +17,15 @@ const locales = {
       },
       {
         localeName: GC.LOCALE_NAME_UA,
-        value: 'Ukrainian',
+        value: 'Українська',
       },
       {
         localeName: GC.LOCALE_NAME_RU,
-        value: 'Russian',
+        value: 'Русский',
       },
       {
         localeName: GC.LOCALE_NAME_PL,
-        value: 'Polish',
+        value: 'Polski',
       },
     ],
   },
@@ -38,7 +38,7 @@ const locales = {
     languages: [
       {
         localeName: GC.LOCALE_NAME_EN,
-        value: 'Англійська',
+        value: 'English',
       },
       {
         localeName: GC.LOCALE_NAME_UA,
@@ -46,11 +46,11 @@ const locales = {
       },
       {
         localeName: GC.LOCALE_NAME_RU,
-        value: 'Російська',
+        value: 'Русский',
       },
       {
         localeName: GC.LOCALE_NAME_PL,
-        value: 'Польська',
+        value: 'Polski',
       },
     ],
   },
@@ -67,15 +67,15 @@ const locales = {
       },
       {
         localeName: GC.LOCALE_NAME_UA,
-        value: 'Ukrainian',
+        value: 'Українська',
       },
       {
         localeName: GC.LOCALE_NAME_RU,
-        value: 'Russian',
+        value: 'Русский',
       },
       {
         localeName: GC.LOCALE_NAME_PL,
-        value: 'Polish',
+        value: 'Polski',
       },
     ],
   },
@@ -92,15 +92,15 @@ const locales = {
       },
       {
         localeName: GC.LOCALE_NAME_UA,
-        value: 'Ukrainian',
+        value: 'Українська',
       },
       {
         localeName: GC.LOCALE_NAME_RU,
-        value: 'Russian',
+        value: 'Русский',
       },
       {
         localeName: GC.LOCALE_NAME_PL,
-        value: 'Polish',
+        value: 'Polski',
       },
     ],
   },

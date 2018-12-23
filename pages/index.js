@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { withTheme } from 'styled-components';
 // components
-import MainPage from '../src/pages/MainPage';
+import MainPage from '../src/pages/main';
 // hocs
 import {
   withPageHead,

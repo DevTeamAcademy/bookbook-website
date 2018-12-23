@@ -13,6 +13,7 @@ import {
   height,
   bottom,
   border,
+  zIndex,
   display,
   position,
   fontSize,
@@ -23,10 +24,14 @@ import {
   minHeight,
   textAlign,
   boxShadow,
+  borderTop,
   alignItems,
   lineHeight,
   fontWeight,
+  borderLeft,
   borderColor,
+  borderRight,
+  borderBottom,
   borderRadius,
   letterSpacing,
   flexDirection,
@@ -46,14 +51,20 @@ export const Box = styled.div`
   ${height}
   ${bottom}
   ${border}
+  ${zIndex}
   ${display}
+  ${fontSize}
   ${position}
   ${maxWidth}
   ${minWidth}
   ${maxHeight}
   ${minHeight}
   ${boxShadow}
+  ${borderTop}
+  ${borderLeft}
+  ${borderRight}
   ${borderColor}
+  ${borderBottom}
   ${borderRadius}
 `;
 
@@ -67,11 +78,17 @@ export const Flex = styled.div`
   ${height}
   ${bottom}
   ${border}
+  ${zIndex}
+  ${fontSize}
   ${flexWrap}
   ${position}
   ${boxShadow}
+  ${borderTop}
+  ${borderLeft}
   ${alignItems}
+  ${borderRight}
   ${borderColor}
+  ${borderBottom}
   ${borderRadius}
   ${flexDirection}
   ${justifyContent}
@@ -81,11 +98,26 @@ export const Flex = styled.div`
 export const Text = styled.div`
   ${color}
   ${space}
+  ${width}
   ${fontSize}
   ${textAlign}
   ${lineHeight}
   ${fontWeight}
   ${letterSpacing}
+  cursor: ${({ cursor }) => or(cursor, 'initial')}
+`;
+
+export const Button = styled.button`
+  ${color}
+  ${space}
+  ${width}
+  ${height}
+  ${border}
+  ${zIndex}
+  ${fontSize}
+  ${boxShadow}
+  ${borderColor}
+  ${borderRadius}
   cursor: ${({ cursor }) => or(cursor, 'initial')}
 `;
 

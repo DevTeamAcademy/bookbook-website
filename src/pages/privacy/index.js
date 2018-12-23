@@ -1,13 +1,14 @@
 import React from 'react';
 // components
-import PageLayout from './PageLayout';
+import PageHeader from '../../components/PageHeader';
+import PageLayout from '../../components/PageLayout';
 // hocs
-import { withLocale } from '../hocs';
+import { withLocale } from '../../hocs';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const PrivacyPage = props => (
   <PageLayout locale={props.locale}>
-    <section>{props.locale.privacyPolicy}</section>
+    <PageHeader text={props.locale.privacyPolicy} />
   </PageLayout>
 );
 

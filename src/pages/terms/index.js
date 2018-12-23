@@ -1,13 +1,14 @@
 import React from 'react';
 // components
-import PageLayout from './PageLayout';
+import PageHeader from '../../components/PageHeader';
+import PageLayout from '../../components/PageLayout';
 // hocs
-import { withLocale } from '../hocs';
+import { withLocale } from '../../hocs';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const TermsPage = props => (
   <PageLayout locale={props.locale}>
-    <section>{props.locale.termsAndConditions}</section>
+    <PageHeader text={props.locale.termsAndConditions} />
   </PageLayout>
 );
 

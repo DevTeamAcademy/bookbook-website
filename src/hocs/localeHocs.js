@@ -14,7 +14,7 @@ class LocaleProvider extends Component {
     this.changeLocale = localeName => this.setState({ localeName });
     this.state = {
       locales,
-      localeName: GC.LOCALE_NAME_EN,
+      localeName: GC.LOCALE_NAME_UA,
       changeLocale: this.changeLocale,
     };
   }

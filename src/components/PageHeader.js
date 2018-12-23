@@ -1,0 +1,8 @@
+import React from 'react';
+//  /////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const PageHeader = props => (
+  <div>{props.text}</div>
+);
+
+export default PageHeader;

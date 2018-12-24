@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
+import posed from 'react-pose';
 // helpers
 import { ifElse } from '../helpers';
 // ui
@@ -28,7 +29,7 @@ export const HeaderWrapper = styled(Flex)`
   }
 `;
 
-export const HeaderLangWrapper = styled(Box)`
+export const HeaderChangeLocaleWrapper = styled(Box)`
   display: none;
   @media only screen and (min-width: 640px) {
     display: block;
@@ -85,3 +86,24 @@ export const HamburgerBtnWrapper = styled('div')`
     transform: ${({ opened }) => ifElse(opened, 'rotate(-135deg)', 'rotate(0deg)')};
   }
 `;
+
+export const BarNavigationWrapper = posed(styled(Box)`
+  display: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media only screen and (max-width: 640px) {
+    display: block;
+  } 
+
+  & > div > a {
+    font-size: 14px;
+    padding: 5px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: ${themeGet('colors.mainOrange', 'white')}; 
+  }
+`)({
+  opened: { y: '0px' },
+  closed: { y: '-100%' },
+});

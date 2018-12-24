@@ -36,6 +36,8 @@ import {
   letterSpacing,
   flexDirection,
   justifyContent } from 'styled-system';
+// helpers
+import * as H from '../helpers';
 // //////////////////////////////////////////////////////////////////////////////
 
 export const Box = styled.div`
@@ -92,7 +94,7 @@ export const Flex = styled.div`
   ${borderRadius}
   ${flexDirection}
   ${justifyContent}
-  display: flex;
+  display: ${({ inline }) => H.ifElse(inline, 'inline-flex', 'flex')};
 `;
 
 export const Text = styled.div`

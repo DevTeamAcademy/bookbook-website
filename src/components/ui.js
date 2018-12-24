@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
+// helpers
+import { ifElse } from '../helpers';
 // ui
 import { Box, Flex } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
@@ -38,5 +40,48 @@ export const FooterWrapper = styled(Flex)`
     padding: 0px 20px;
     text-decoration: none;
     color: ${themeGet('colors.mainOrange', 'white')}; 
+  }
+`;
+
+export const HamburgerBtnWrapper = styled('div')`
+  width: 40px;
+  height: 35px;
+  display: none;
+  cursor: pointer;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+
+  @media only screen and (max-width: 640px) {
+    display: block;
+  } 
+  
+  & > span {
+    left: 0;
+    opacity: 1;
+    height: 5px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    border-radius: 9px;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    background: ${themeGet('colors.white', 'white')};
+  }
+
+  & > span:nth-child(1) {
+    top: ${({ opened }) => ifElse(opened, '15px', '0px')};
+    transform: ${({ opened }) => ifElse(opened, 'rotate(135deg)', 'rotate(0deg)')};
+  }
+
+  & > span:nth-child(2) {
+    opacity: ${({ opened }) => ifElse(opened, 0, 1)};
+    left: ${({ opened }) => ifElse(opened, '-40px', '0')};
+    top: ${({ opened }) => ifElse(opened, '15px', '15px')};
+  }
+
+  & > span:nth-child(3) {
+    top: ${({ opened }) => ifElse(opened, '15px', '30px')};
+    transform: ${({ opened }) => ifElse(opened, 'rotate(-135deg)', 'rotate(0deg)')};
   }
 `;

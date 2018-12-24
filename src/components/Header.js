@@ -1,15 +1,34 @@
 import React from 'react';
 import Link from 'next/link';
 import { withState } from 'recompose';
+import { not } from 'ramda';
 import { withTheme } from 'styled-components';
 // components
 import Navigation from './Navigation';
-import { HeaderWrapper, HeaderLangWrapper } from './ui';
+import {
+  HeaderWrapper,
+  HeaderLangWrapper,
+  HamburgerBtnWrapper } from './ui';
 // hocs
 import { withChangeLocale } from '../hocs';
 // ui
-import { Flex, Text, Image } from '../ui';
+import { Box, Flex, Text, Image } from '../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
+
+export const HamburgerBtn = props => (
+  <Box
+    flex='1 1 auto'
+  >
+    <Flex justifyContent='flex-end'>
+      <HamburgerBtnWrapper
+        opened={props.openedStatus}
+        onClick={() => props.toggleOpenedStatus(not(props.openedStatus))}
+      >
+        <span /><span /><span />
+      </HamburgerBtnWrapper>
+    </Flex>
+  </Box>
+);
 
 export const HeaderLanguagesPopover = withChangeLocale(props => (
   <Flex
@@ -77,9 +96,12 @@ export const Header = props => (
         </a>
       </Link>
       <Navigation {...props} />
+      <HamburgerBtn {...props} />
       <HeaderLanguages {...props} />
     </HeaderWrapper>
   </header>
 );
 
-export default withTheme(Header);
+export const enhanceWithOpenedStatus = withState('openedStatus', 'toggleOpenedStatus', false);
+
+export default withTheme(enhanceWithOpenedStatus(Header));

@@ -1,5 +1,6 @@
 import React from 'react';
 import { or } from 'ramda';
+import { themeGet } from 'styled-system';
 // hocs
 import {
   withChangeLocale,
@@ -17,17 +18,17 @@ export const ChangeLocalePopover = withChangeLocale(props => (
     flexDirection='column'
     top={or(props.popperTop, '30px')}
     right={or(props.popperRight, '0px')}
-    bg={props.theme.colors.lightGrey}
-    borderColor={props.theme.colors.mainOrange}
     onMouseLeave={() => props.setHoveredStatus(false)}
+    bg={themeGet('colors.lightGrey', 'grey')(props)}
+    borderColor={themeGet('colors.mainOrange', 'orange')(props)}
   >
     {props.locale.languages.map((item) => (
       <Text
         m='5px'
         cursor='pointer'
         key={item.localeName}
-        color={props.theme.colors.mainOrange}
         onClick={() => props.changeLocale(item.localeName)}
+        color={themeGet('colors.mainOrange', 'orange')(props)}
       >
         {item.value}
       </Text>

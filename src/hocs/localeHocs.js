@@ -1,22 +1,38 @@
 import React, { Component, createContext } from 'react';
 // constants
 import * as GC from '../constants';
+import * as H from '../helpers';
 // locale
 import locales from '../locale';
 // /////////////////////////////////////////////////////////////////////////////////////////////////
 
+const getLocale = () => H.ifElse(
+  H.isNotNilAndNotEmpty(H.getItemFromLocalStorage('localeName')),
+  H.getItemFromLocalStorage('localeName'),
+  GC.LOCALE_NAME_UA,
+);
+
 const LocaleContext = createContext();
 
-// TODO: set locale to storage and get from there
 class LocaleProvider extends Component {
   constructor(props) {
     super(props);
-    this.changeLocale = localeName => this.setState({ localeName });
+    this.changeLocale = this.changeLocale.bind(this);
     this.state = {
       locales,
       localeName: GC.LOCALE_NAME_UA,
       changeLocale: this.changeLocale,
     };
+  }
+
+  componentDidMount() {
+    this.changeLocale(getLocale());
+  }
+
+
+  changeLocale(localeName) {
+    H.setItemToLocalStorage('localeName', localeName);
+    this.setState({ localeName });
   }
 
   render() {

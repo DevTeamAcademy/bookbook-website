@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { not } from 'ramda';
+import { themeGet } from 'styled-system';
 // components
 import { ChangeLocale } from './ChangeLocale';
 import { BarNavigationWrapper } from './ui';
@@ -88,9 +88,9 @@ export const BarNavigation = props => (
     <BarNavigationWrapper
       width='100%'
       position='absolute'
-      bg={props.theme.colors.lightGrey}
+      bg={themeGet('colors.lightGrey', 'grey')(props)}
       pose={H.ifElse(props.opened, 'opened', 'closed')}
-      border={`1px solid ${props.theme.colors.mainOrange}`}
+      border={`1px solid ${themeGet('colors.mainOrange', 'orange')(props)}`}
     >
       <BarContent {...props} />
     </BarNavigationWrapper>

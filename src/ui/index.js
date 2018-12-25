@@ -40,6 +40,14 @@ import {
 import * as H from '../helpers';
 // //////////////////////////////////////////////////////////////////////////////
 
+export const createMinWithMediaQuery = n => `
+  @media screen and (min-width: ${n}px)
+`;
+
+export const createMaxWithMediaQuery = n => `
+  @media screen and (max-width: ${n}px)
+`;
+
 export const Box = styled.div`
   ${top}
   ${left}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { withTheme } from 'styled-components';
+import { themeGet } from 'styled-system';
 // components
 import SocialNav from './SocialNav';
 import { FooterWrapper } from './ui';
@@ -26,10 +27,14 @@ export const Footer = props => (
       fontSize={10}
       alignItems='center'
       flexDirection='column'
-      bg={props.theme.colors.darkGrey}
+      bg={themeGet('colors.darkGrey', 'grey')(props)}
     >
       <SocialNav {...props} />
-      <Text color={props.theme.colors.white}>{props.locale.copyright}</Text>
+      <Text
+        color={themeGet('colors.white', 'white')(props)}
+      >
+        {props.locale.copyright}
+      </Text>
       <FooterNavigation {...props} />
     </FooterWrapper>
   </footer>

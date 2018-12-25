@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { not } from 'ramda';
 import { withTheme } from 'styled-components';
+import { themeGet } from 'styled-system';
 // components
 import { ChangeLocale } from './ChangeLocale';
 import { BarNavigation, HeaderNavigation } from './Navigation';
@@ -50,8 +51,8 @@ export const Header = props => (
       height='50px'
       position='sticky'
       alignItems='center'
-      bg={props.theme.colors.lightBlack}
-      borderBottom={`1px solid ${props.theme.colors.white}`}
+      bg={themeGet('colors.lightBlack', 'white')(props)}
+      borderBottom={`1px solid ${themeGet('colors.white', 'white')(props)}`}
     >
       <Logo {...props} />
       <HeaderNavigation {...props} />

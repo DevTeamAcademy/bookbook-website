@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 import posed from 'react-pose';
+// constants
+import * as GC from '../constants';
 // helpers
 import { ifElse } from '../helpers';
 // ui
-import { Box, Flex } from '../ui';
+import {
+  Box,
+  Flex,
+  createMinWithMediaQuery,
+  createMaxWithMediaQuery } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
 
 export const HeaderWrapper = styled(Flex)`
@@ -16,9 +22,9 @@ export const HeaderWrapper = styled(Flex)`
   & > nav {
     display: none;
     flex: 1 1 auto;
-    @media only screen and (min-width: 640px) {
+    ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
       display: block;
-    } 
+    }
   }
 
   & > nav > a {
@@ -31,9 +37,9 @@ export const HeaderWrapper = styled(Flex)`
 
 export const HeaderChangeLocaleWrapper = styled(Box)`
   display: none;
-  @media only screen and (min-width: 640px) {
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: block;
-  } 
+  }
 `;
 
 export const FooterWrapper = styled(Flex)`
@@ -53,9 +59,9 @@ export const HamburgerBtnWrapper = styled('div')`
   transform: rotate(0deg);
   transition: .5s ease-in-out;
 
-  @media only screen and (max-width: 640px) {
+  ${createMaxWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: block;
-  } 
+  }
   
   & > span {
     left: 0;
@@ -92,9 +98,9 @@ export const BarNavigationWrapper = posed(styled(Box)`
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
-  @media only screen and (max-width: 640px) {
+  ${createMaxWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: block;
-  } 
+  }
 
   & > div > a {
     font-size: 14px;
@@ -104,6 +110,14 @@ export const BarNavigationWrapper = posed(styled(Box)`
     color: ${themeGet('colors.mainOrange', 'white')}; 
   }
 `)({
-  opened: { y: '0px' },
-  closed: { y: '-100%' },
+  opened: {
+    y: '0px',
+  },
+  closed: {
+    y: '-100%',
+    transition: {
+      ease: 'linear',
+      duration: 100,
+    },
+  },
 });

@@ -8,3 +8,5 @@ export const ROUTE_ABOUT = '/about';
 export const ROUTE_CONTACTS = '/contacts';
 export const ROUTE_TERMS = '/terms';
 export const ROUTE_PRIVACY = '/privacy';
+
+export const FIRST_UI_BREAKPOINT = 640;

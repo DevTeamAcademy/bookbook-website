@@ -1,60 +1,47 @@
 import React from 'react';
 import Link from 'next/link';
-import { withState } from 'recompose';
+import { not } from 'ramda';
 import { withTheme } from 'styled-components';
+import { themeGet } from 'styled-system';
 // components
-import Navigation from './Navigation';
-import { HeaderWrapper, HeaderLangWrapper } from './ui';
+import { ChangeLocale } from './ChangeLocale';
+import { BarNavigation, HeaderNavigation } from './Navigation';
+import {
+  HeaderWrapper,
+  HamburgerBtnWrapper,
+  HeaderChangeLocaleWrapper } from './ui';
 // hocs
-import { withChangeLocale } from '../hocs';
+import { withOpenedStatus } from '../hocs';
 // ui
-import { Flex, Text, Image } from '../ui';
+import { Box, Flex, Image } from '../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const HeaderLanguagesPopover = withChangeLocale(props => (
-  <Flex
-    p='5px'
-    top='20px'
-    right='0px'
-    border='1px solid'
-    position='absolute'
-    borderRadius='3px'
-    flexDirection='column'
-    bg={props.theme.colors.lightGrey}
-    borderColor={props.theme.colors.mainOrange}
+export const HamburgerBtn = props => (
+  <Box
+    flex='1 1 auto'
   >
-    {props.locale.languages.map((item) => (
-      <Text
-        m='5px'
-        key={item.localeName}
-        cursor='pointer'
-        color={props.theme.colors.mainOrange}
-        onClick={() => props.changeLocale(item.localeName)}
+    <Flex justifyContent='flex-end'>
+      <HamburgerBtnWrapper
+        opened={props.opened}
+        onClick={() => props.toggleOpenedStatus(not(props.opened))}
       >
-        {item.value}
-      </Text>
-    ))}
-  </Flex>
-));
-
-export const enhanceHeaderLanguages = withState('languagesHovered', 'setLanguagesHovered', false);
-
-export const HeaderLanguages = enhanceHeaderLanguages(props => (
-  <HeaderLangWrapper
-    flex='0 1 auto'
-    position='relative'
-    onMouseEnter={() => props.setLanguagesHovered(true)}
-    onMouseLeave={() => props.setLanguagesHovered(false)}
-  >
-    <Flex alignItems='center'>
-      <Image src='../../static/language-icon.svg' alt='language' />
-      <Image src='../../static/arrow-down-icon.svg' alt='language' />
-      {
-        props.languagesHovered && <HeaderLanguagesPopover {...props} />
-      }
+        <span /><span /><span />
+      </HamburgerBtnWrapper>
     </Flex>
-  </HeaderLangWrapper>
-));
+  </Box>
+);
+
+export const Logo = () => (
+  <Link href='./' passHref>
+    <a>
+      <Image
+        alt='logo'
+        height='100%'
+        src='../../static/bookbook-logo.png'
+      />
+    </a>
+  </Link>
+);
 
 export const Header = props => (
   <header>
@@ -64,22 +51,18 @@ export const Header = props => (
       height='50px'
       position='sticky'
       alignItems='center'
-      bg={props.theme.colors.lightBlack}
-      borderBottom={`1px solid ${props.theme.colors.white}`}
+      bg={themeGet('colors.lightBlack', 'white')(props)}
+      borderBottom={`1px solid ${themeGet('colors.white', 'white')(props)}`}
     >
-      <Link href='./' passHref>
-        <a>
-          <Image
-            alt='logo'
-            height='100%'
-            src='../../static/bookbook-logo.png'
-          />
-        </a>
-      </Link>
-      <Navigation {...props} />
-      <HeaderLanguages {...props} />
+      <Logo {...props} />
+      <HeaderNavigation {...props} />
+      <HamburgerBtn {...props} />
+      <HeaderChangeLocaleWrapper flex='0 1 auto'>
+        <ChangeLocale {...props} />
+      </HeaderChangeLocaleWrapper>
     </HeaderWrapper>
+    <BarNavigation {...props} />
   </header>
 );
 
-export default withTheme(Header);
+export default withTheme(withOpenedStatus(Header));

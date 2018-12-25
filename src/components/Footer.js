@@ -1,20 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
 import { withTheme } from 'styled-components';
+import { themeGet } from 'styled-system';
 // components
 import SocialNav from './SocialNav';
 import { FooterWrapper } from './ui';
+// helpers
+import * as H from '../helpers';
 // ui
 import { Text } from '../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const FooterNavigation = props => (
+export const FooterNavigation = ({ locale }) => (
   <nav>
     <Link href='./terms' passHref>
-      <a>{props.locale.termsAndConditions}</a>
+      <a>{H.getLocaleItem(['termsAndConditions'], locale)}</a>
     </Link>
     <Link href='./privacy' passHref>
-      <a>{props.locale.privacyPolicy}</a>
+      <a>{H.getLocaleItem(['privacyPolicy'], locale)}</a>
     </Link>
   </nav>
 );
@@ -26,10 +29,14 @@ export const Footer = props => (
       fontSize={10}
       alignItems='center'
       flexDirection='column'
-      bg={props.theme.colors.darkGrey}
+      bg={themeGet('colors.darkGrey', 'grey')(props)}
     >
       <SocialNav {...props} />
-      <Text color={props.theme.colors.white}>{props.locale.copyright}</Text>
+      <Text
+        color={themeGet('colors.white', 'white')(props)}
+      >
+        {H.getLocaleItem(['copyright'], props.locale)}
+      </Text>
       <FooterNavigation {...props} />
     </FooterWrapper>
   </footer>

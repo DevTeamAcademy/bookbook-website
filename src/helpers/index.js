@@ -7,6 +7,8 @@ import {
   pathOr,
   isEmpty,
   complement } from 'ramda';
+// constants
+import * as GC from '../constants';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ADDITION RAMDA HELPERS
@@ -29,3 +31,12 @@ export const ifElse = (predicate, ifSt, elseSt) => {
 };
 
 export const getLocaleItem = (path, locale) => pathOr('', path, locale);
+
+// TODO: find better solution for check browser and getting pathname
+export const isBrowser = new Function('try {return this===window;}catch(e){ return false;}'); // eslint-disable-line
+export const getLocationPathname = () => {
+  if (isBrowser()) {
+    return window.location.pathname;
+  }
+  return GC.ROUTE_HOME;
+};

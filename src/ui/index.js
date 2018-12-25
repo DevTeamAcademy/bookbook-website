@@ -14,6 +14,7 @@ import {
   bottom,
   border,
   zIndex,
+  opacity,
   display,
   position,
   fontSize,
@@ -62,6 +63,7 @@ export const Box = styled.div`
   ${bottom}
   ${border}
   ${zIndex}
+  ${opacity}
   ${display}
   ${fontSize}
   ${position}
@@ -89,6 +91,7 @@ export const Flex = styled.div`
   ${bottom}
   ${border}
   ${zIndex}
+  ${opacity}
   ${fontSize}
   ${flexWrap}
   ${position}
@@ -109,6 +112,7 @@ export const Text = styled.div`
   ${color}
   ${space}
   ${width}
+  ${opacity}
   ${fontSize}
   ${textAlign}
   ${lineHeight}

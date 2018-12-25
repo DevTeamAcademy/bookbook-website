@@ -2,6 +2,7 @@ import React from 'react';
 import { withTheme } from 'styled-components';
 // components
 import { MainSectionWrapper } from './ui';
+import * as H from '../../helpers';
 // ui
 import { Flex, Text, Button } from '../../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -21,7 +22,7 @@ export const MainSection = props => (
         fontSize={[18, 24, 32]}
         color={props.theme.colors.white}
       >
-        {props.locale.mainPage.mainSectionFirstText}
+        {H.getLocaleItem(['mainPage', 'mainSectionFirstText'], props.locale)}
       </Text>
       <Text
         mb={100}
@@ -30,7 +31,7 @@ export const MainSection = props => (
         fontSize={[14, 18, 24]}
         color={props.theme.colors.white}
       >
-        {props.locale.mainPage.mainSectionSecondText}
+        {H.getLocaleItem(['mainPage', 'mainSectionSecondText'], props.locale)}
       </Text>
       <Button
         type='button'
@@ -42,7 +43,7 @@ export const MainSection = props => (
         bg={props.theme.colors.mainOrange}
         boxShadow={props.theme.shadows.button}
       >
-        {props.locale.actions.openBookbook}
+        {H.getLocaleItem(['actions', 'openBookbook'], props.locale)}
       </Button>
     </Flex>
   </MainSectionWrapper>

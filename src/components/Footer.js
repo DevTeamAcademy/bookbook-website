@@ -5,17 +5,19 @@ import { themeGet } from 'styled-system';
 // components
 import SocialNav from './SocialNav';
 import { FooterWrapper } from './ui';
+// helpers
+import * as H from '../helpers';
 // ui
 import { Text } from '../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const FooterNavigation = props => (
+export const FooterNavigation = ({ locale }) => (
   <nav>
     <Link href='./terms' passHref>
-      <a>{props.locale.termsAndConditions}</a>
+      <a>{H.getLocaleItem(['termsAndConditions'], locale)}</a>
     </Link>
     <Link href='./privacy' passHref>
-      <a>{props.locale.privacyPolicy}</a>
+      <a>{H.getLocaleItem(['privacyPolicy'], locale)}</a>
     </Link>
   </nav>
 );
@@ -33,7 +35,7 @@ export const Footer = props => (
       <Text
         color={themeGet('colors.white', 'white')(props)}
       >
-        {props.locale.copyright}
+        {H.getLocaleItem(['copyright'], props.locale)}
       </Text>
       <FooterNavigation {...props} />
     </FooterWrapper>

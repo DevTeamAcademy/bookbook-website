@@ -95,6 +95,7 @@ export const HamburgerBtnWrapper = styled('div')`
 
 export const BarNavigationWrapper = posed(styled(Box)`
   display: none;
+  opacity: 0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
@@ -111,9 +112,11 @@ export const BarNavigationWrapper = posed(styled(Box)`
   }
 `)({
   opened: {
+    opacity: 1,
     y: '0px',
   },
   closed: {
+    opacity: 0,
     y: '-100%',
     transition: {
       ease: 'linear',

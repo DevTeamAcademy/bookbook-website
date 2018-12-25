@@ -13,12 +13,11 @@ export const ChangeLocalePopover = withChangeLocale(props => (
   <Flex
     p='5px'
     border='1px solid'
-    position='absolute'
     borderRadius='3px'
+    position='absolute'
     flexDirection='column'
-    top={or(props.popperTop, '30px')}
+    top={or(props.popperTop, '20px')}
     right={or(props.popperRight, '0px')}
-    onMouseLeave={() => props.setHoveredStatus(false)}
     bg={themeGet('colors.lightGrey', 'grey')(props)}
     borderColor={themeGet('colors.mainOrange', 'orange')(props)}
   >
@@ -40,6 +39,7 @@ export const ChangeLocale = withHoveredStatus(props => (
   <Box
     {...props}
     onMouseEnter={() => props.setHoveredStatus(true)}
+    onMouseLeave={() => props.setHoveredStatus(false)}
   >
     <Flex
       position='relative'

@@ -9,7 +9,7 @@ let loopNum = 0;
 export const withTickyText = compose(
   withState('outputText', 'setOutputText', ''),
   withHandlers({
-    tickInputTextWithDelay: props => (letter) => {
+    tickInputTextWithDelay: props => letter => {
       const { period, setOutputText } = props;
       const delta = add(loopNum, period);
       loopNum = add(loopNum, period);

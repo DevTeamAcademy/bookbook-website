@@ -32,10 +32,15 @@ export const ifElse = (predicate, ifSt, elseSt) => {
 
 export const getLocaleItem = (path, locale) => pathOr('', path, locale);
 
-// TODO: find better solution for check browser and getting pathname
-export const isBrowser = new Function('try {return this===window;}catch(e){ return false;}'); // eslint-disable-line
+// TODO: remove it if below solution works properly
+// export const isBrowser = new Function('try {return this===window;}catch(e){ return false;}'); // eslint-disable-line
+
+export const isBrowser = typeof window === 'object'
+  && typeof document === 'object'
+  && document.nodeType === 9;
+
 export const getLocationPathname = () => {
-  if (isBrowser()) {
+  if (isBrowser) {
     return window.location.pathname;
   }
   return GC.ROUTE_HOME;

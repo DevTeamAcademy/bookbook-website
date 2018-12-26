@@ -94,8 +94,8 @@ export const HamburgerBtnWrapper = styled('div')`
 `;
 
 export const BarNavigationWrapper = posed(styled(Box)`
-  display: none;
   opacity: 0;
+  display: none;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
@@ -114,6 +114,7 @@ export const BarNavigationWrapper = posed(styled(Box)`
   opened: {
     opacity: 1,
     y: '0px',
+    staggerChildren: 100,
   },
   closed: {
     opacity: 0,
@@ -123,4 +124,35 @@ export const BarNavigationWrapper = posed(styled(Box)`
       duration: 100,
     },
   },
+});
+
+export const HeaderNavigationItemWrapper = styled('span')`
+  position: relative;
+
+  &::before {
+    left: 50%;
+    top: 17px;
+    content: '^';
+    font-weight: 700;
+    position: absolute;
+    opacity: ${({ active }) => ifElse(active, 1, 0)};
+    color: ${themeGet('colors.mainOrange', 'white')}; 
+  }
+`;
+
+export const BarNavigationItemWrapper = posed(styled('div')`
+  position: relative;
+
+  &::before {
+    top: 0px;
+    left: -15px;
+    content: '>';
+    font-weight: 700;
+    position: absolute;
+    opacity: ${({ active }) => ifElse(active, 1, 0)};
+    color: ${themeGet('colors.mainOrange', 'white')}; 
+  }
+`)({
+  opened: { opacity: 1 },
+  closed: { opacity: 0 },
 });

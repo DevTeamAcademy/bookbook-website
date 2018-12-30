@@ -139,8 +139,8 @@ export const Button = styled.button`
 export const Input = styled.input`
   ${space}
   ${width}
-  ${height}
   ${border}
+  ${height}
 `;
 
 export const LinkButton = styled.a`
@@ -148,6 +148,7 @@ export const LinkButton = styled.a`
   ${space}
   ${width}
   ${height}
+  ${border}
   ${zIndex}
   ${opacity}
   ${display}

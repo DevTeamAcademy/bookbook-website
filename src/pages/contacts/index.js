@@ -11,7 +11,6 @@ import { withLocale } from '../../hocs';
 
 export const ContactsPage = props => (
   <PageLayout locale={props.locale}>
-    <PageHeader text={H.getLocaleItem(['contacts'], props.locale)} />
     <Contacts locale={props.locale} />
   </PageLayout>
 );

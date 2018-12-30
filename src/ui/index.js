@@ -136,6 +136,13 @@ export const Button = styled.button`
   cursor: ${({ cursor }) => or(cursor, 'initial')}
 `;
 
+export const Input = styled.input`
+  ${space}
+  ${width}
+  ${border}
+  ${height}
+`;
+
 export const LinkButton = styled.a`
   ${color}
   ${space}

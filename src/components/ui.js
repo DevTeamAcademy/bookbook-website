@@ -59,6 +59,8 @@ export const HamburgerBtnWrapper = styled('div')`
   transform: rotate(0deg);
   transition: .5s ease-in-out;
 
+  
+
   ${createMaxWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: block;
   }

@@ -3,12 +3,19 @@ import * as GC from '../constants';
 // /////////////////////////////////////////////////////////////////////////////////////////////////
 
 const UA = {
+  email: 'Емейл',
   home: 'домашня',
+  send: 'Надіслати',
+  yourName: 'Ім\'я',
+  details: 'Деталі',
   aboutUs: 'про нас',
-  contacts: 'контакти',
-  termsAndConditions: 'умови використання',
+  contacts: 'Контакти',
+  contactUs: 'Контакти',
+  phoneNumber: 'Телефон',
+  attachFile: 'Додати файл',
   privacyPolicy: 'політика приватності',
   copyright: '2018 © Всі права захищено',
+  termsAndConditions: 'умови використання',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -42,11 +49,18 @@ const UA = {
 
 const EN = {
   home: 'home',
+  send: 'Send',
+  email: 'Email',
+  yourName: 'Name',
+  details: 'Details',
   aboutUs: 'about us',
   contacts: 'contacts',
-  termsAndConditions: 'terms and conditions',
+  contactUs: 'Contact Us',
+  attachFile: 'Attach File',
+  phoneNumber: 'Phone Number',
   privacyPolicy: 'privacy policy',
   copyright: '2018 © All rights reserved',
+  termsAndConditions: 'terms and conditions',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -79,11 +93,18 @@ const EN = {
 
 const RU = {
   home: 'home',
+  send: 'Send',
+  email: 'Email',
+  yourName: 'Name',
+  details: 'Details',
   aboutUs: 'about us',
   contacts: 'contacts',
-  termsAndConditions: 'terms and conditions',
+  contactUs: 'Contact Us',
+  attachFile: 'Attach File',
+  phoneNumber: 'Phone Number',
   privacyPolicy: 'privacy policy',
   copyright: '2018 © All rights reserved',
+  termsAndConditions: 'terms and conditions',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -116,11 +137,18 @@ const RU = {
 
 const PL = {
   home: 'home',
+  send: 'Send',
+  email: 'Email',
+  yourName: 'Name',
+  details: 'Details',
   aboutUs: 'about us',
   contacts: 'contacts',
-  termsAndConditions: 'terms and conditions',
+  contactUs: 'Contact Us',
+  attachFile: 'Attach File',
+  phoneNumber: 'Phone Number',
   privacyPolicy: 'privacy policy',
   copyright: '2018 © All rights reserved',
+  termsAndConditions: 'terms and conditions',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,

@@ -143,6 +143,13 @@ export const Input = styled.input`
   ${height}
 `;
 
+export const TextArea = styled.textarea`
+  ${space}
+  ${width}
+  ${border}
+  ${height}
+`;
+
 export const LinkButton = styled.a`
   ${color}
   ${space}

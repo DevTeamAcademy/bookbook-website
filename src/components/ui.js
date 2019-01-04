@@ -9,8 +9,13 @@ import { ifElse } from '../helpers';
 import {
   Box,
   Flex,
+  // Text,
+  Input,
+  TextArea,
   createMinWithMediaQuery,
-  createMaxWithMediaQuery } from '../ui';
+  createMaxWithMediaQuery,
+  // Button
+} from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
 
 export const HeaderWrapper = styled(Flex)`
@@ -158,3 +163,104 @@ export const BarNavigationItemWrapper = posed(styled('div')`
   opened: { opacity: 1 },
   closed: { opacity: 0 },
 });
+
+// Contacts form styles
+export const Title = styled(Flex)`
+  height: 55px; 
+  color: #1e1b18; 
+  font-size: 24px; 
+  font-weight: bold; 
+  position: relative; 
+  font-family: Roboto;  /*TODO: connect this font*/
+  align-items: center; 
+  flex-direction: column; 
+  justify-content: center;
+`;
+
+export const Line = styled.div`
+  bottom: 0; 
+  width: 47.5px; 
+  height: 4.5px; 
+  position: absolute; 
+  border-radius: 10px; 
+  background-color: #f18701;
+`;
+
+export const FormContainer = styled.div`
+  display: flex;
+  margin-top: 22px;
+  align-items: center;
+  flex-direction: column;  
+`;
+
+export const FormInput = styled(Input)`
+  border: 0;
+  width: 262px;
+  font-size: 12px;
+  border-radius: 0;
+  margin-bottom: 15px;
+  font-family: "Roboto";
+  border-bottom: 1.5px solid #f18701; 
+`;
+
+export const FormTextArea = styled(TextArea)`
+  width: 262px;
+  resize: none;
+  height: 133.5px;
+  font-size: 12px;
+  font-family: "Roboto";
+  border-bottom: 1.5px solid #f18701;
+`;
+
+export const FormButtonsContainer = styled(Flex)`
+margin-top: 33px; 
+margin-bottom: 33px; 
+justify-content: space-between; 
+`;
+
+export const AttachButton = styled(Flex)`
+  height: 35px;
+  width: 108px;
+  color: #f18701;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 23px;
+  align-items: center;
+  font-family: "Roboto";  
+  justify-content: center;
+  background-color: #ffffff; 
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
+  
+    &::before {
+      margin-left: -5px;
+      transform: scale(0.5);
+      content: url(../../static/clip.png);
+    }
+`;
+
+export const ContactButton = styled(AttachButton)`
+  color: #ffffff;
+  font-size: 18px;
+  margin-right: 0;
+  margin-left: 23px;
+  background-color: #f18701;
+    
+    &::before {
+        content: "";
+    }
+`;
+
+export const ContactSection = styled(Flex)`
+  height: 205px;
+  position: relative;
+  background-color: #f1f1f1;
+`;
+
+export const ContactsInfo = styled.div`
+  font-size: 15px;
+  margin-top: 19px;
+  line-height: 1.5;
+  margin-left: 31px;
+  position: absolute;
+  font-family: "Roboto"; 
+`;

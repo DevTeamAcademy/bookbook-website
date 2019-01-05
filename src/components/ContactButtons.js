@@ -8,6 +8,6 @@ export const ContactButtons = (props) => (
       props.allowAttachButton
       && <AttachButton>{props.attachButtonText}</AttachButton>
     }
-    <ContactButton>{props.contactButtonText}</ContactButton>
+    <ContactButton onClick={props.onSubmit}>{props.contactButtonText}</ContactButton>
   </FormButtonsContainer>
 );

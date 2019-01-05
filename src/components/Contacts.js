@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import { compose, withState, withHandlers } from 'recompose';
+
 // components
 import { SectionTitle } from './SectionTitle';
 import { ContactButtons } from './ContactButtons';
@@ -12,8 +14,67 @@ import {
   FormTextArea,
   ContactsInfo,
 } from './ui';
-
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
+
+const fields = [
+  {
+    type: 'text',
+    name: 'yourName',
+    component: (props) => <FormInput {...props} />,
+  },
+  { type: 'email', name: 'email', component: (props) => <FormInput {...props} /> },
+  { type: 'tel', name: 'phoneNumber', component: (props) => <FormInput {...props} /> },
+  { type: 'text', name: 'details', component: (props) => <FormTextArea {...props} /> },
+];
+
+const initialFields = {
+  yourName: '',
+  email: '',
+  phoneNumber: '',
+  details: '',
+};
+
+const initialErrors = {
+  yourName: false,
+  email: false,
+  phoneNumber: false,
+  details: false,
+};
+
+const checkContactFormErrors = () => {
+  return {
+    yourName: true,
+    email: true,
+    phoneNumber: false,
+    details: false,
+  };
+  // TODO: check invalid fields, e.g. {yourName: true, email: true}
+};
+
+const enhance = compose(
+  withState('fields', 'setFields', initialFields),
+  withState('errors', 'setErrors', initialErrors),
+  withHandlers({
+    handleHideError: (props) => (name) => {
+      const newErrors = props.errors;
+      newErrors[name] = false;
+      props.setErrors(newErrors);
+    },
+    handleFieldChange: (props) => (e, name) => {
+      const field = e.currentTarget;
+      const newFields = props.fields;
+      newFields[name] = field.value;
+      props.setFields(newFields);
+    },
+    handleSubmit: (props) => () => {
+      const errors = checkContactFormErrors(props.fields);
+      const isValid = errors.length === 0;
+      if (!isValid) return props.setErrors(errors);
+      return isValid;
+      // TODO: send xhr request
+    },
+  }),
+);
 
 export const Contacts = (props) => (
   <Fragment>
@@ -21,7 +82,28 @@ export const Contacts = (props) => (
       titleText={H.getLocaleItem(['contactUs'], props.locale)}
     />
     <FormContainer>
-      <FormInput
+      {
+        fields.map((field, index) => (
+          field.component({
+            type: field.type,
+            value: props.fields[field.name],
+            isInvalid: props.errors[field.name],
+            onFocus: () => props.handleHideError(field.name),
+            key: `contact-form-field-${field.name}-${index}`,
+            onChange: (e) => props.handleFieldChange(e, field.name),
+            placeholder: H.getLocaleItem([field.name], props.locale),
+          })
+        ))
+        // fields.map((field, index) => {
+        //   return field.component({
+        //     type: field.type,
+        //     key: `contact-form-field-${field.name}-${index}`,
+        //     onChange: (e) => props.onFieldChange(e, field.name),
+        //     placeholder: H.getLocaleItem([field.name], props.locale),
+        //   });
+        // })
+      }
+      {/* {<FormInput
         type='text'
         placeholder={H.getLocaleItem(['yourName'], props.locale)}
       />
@@ -36,11 +118,12 @@ export const Contacts = (props) => (
       <FormTextArea
         type='text'
         placeholder={H.getLocaleItem(['details'], props.locale)}
-      />
+      />} */}
       <ContactButtons
+        onSubmit={props.handleSubmit}
         allowAttachButton={props.allowAttachButton}
-        attachButtonText={H.getLocaleItem(['attachFile'], props.locale)}
         contactButtonText={H.getLocaleItem(['send'], props.locale)}
+        attachButtonText={H.getLocaleItem(['attachFile'], props.locale)}
       />
     </FormContainer>
     {
@@ -60,4 +143,4 @@ export const Contacts = (props) => (
   </Fragment>
 );
 
-export default Contacts;
+export default enhance(Contacts);

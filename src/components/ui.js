@@ -270,3 +270,13 @@ export const ContactsInfo = styled.div`
   position: absolute;
   font-family: "Roboto"; 
 `;
+
+export const ErrorMessage = styled.div`
+  top: 10px;
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  white-space: nowrap;
+  left: calc(100% + 8px);
+
+`;

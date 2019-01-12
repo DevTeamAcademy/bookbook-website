@@ -42,6 +42,11 @@ const UA = {
       прочитане... :)
     `,
   },
+  errorMessages: {
+    yourName: 'Будь ласка, введіть існуюче ім`я',
+    email: 'Електронна адреса невірна',
+    phoneNumber: 'Номер невірний',
+  },
   actions: {
     openBookbook: 'Відкрити @bookbook',
   },
@@ -85,6 +90,11 @@ const EN = {
       @bookbook - platform that allows you not only
       to save and distribute the read... :)
     `,
+  },
+  errorMessages: {
+    yourName: 'Please, enter a valid name',
+    email: 'Please, enter a valid email',
+    phoneNumber: 'Please, enter a valid phone number',
   },
   actions: {
     openBookbook: 'Open @bookbook',
@@ -130,6 +140,11 @@ const RU = {
       to save and distribute the read... :)
     `,
   },
+  errorMessages: {
+    yourName: 'Please, enter a valid name RU',
+    email: 'Please, enter a valid email RU',
+    phoneNumber: 'Please, enter a valid phone number RU',
+  },
   actions: {
     openBookbook: 'Open @bookbook',
   },
@@ -173,6 +188,11 @@ const PL = {
       @bookbook - platform that allows you not only
       to save and distribute the read... :)
     `,
+  },
+  errorMessages: {
+    yourName: 'Please, enter a valid name PL',
+    email: 'Please, enter a valid email PL',
+    phoneNumber: 'Please, enter a valid phone number PL',
   },
   actions: {
     openBookbook: 'Open @bookbook',

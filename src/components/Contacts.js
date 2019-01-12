@@ -13,9 +13,9 @@ import {
   FormInput,
   FormTextArea,
   ContactsInfo,
-  ErrorMessage,
   FormContainer,
   ContactSection,
+  FormFieldContainer,
 } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -38,7 +38,8 @@ const fields = [
   {
     type: 'text',
     name: 'details',
-    component: (props) => <FormTextArea {...props} /> },
+    component: (props) => <FormTextArea {...props} />,
+  },
 ];
 
 const initialFieldValues = {
@@ -65,6 +66,7 @@ const getErrors = (values) => ({
 const enhance = compose(
   withState('fields', 'setFields', initialFieldValues),
   withState('errors', 'setErrors', initialErrors),
+  withState('requestPending', 'setRequestPending', false),
   withHandlers({
     handleHideError: (props) => (name) => {
       const newErrors = props.errors;
@@ -81,13 +83,23 @@ const enhance = compose(
       const errors = getErrors(props.fields);
       const isInvalid = Object.values(errors).some(err => err === true);
       if (isInvalid) return props.setErrors(errors);
+      props.setRequestPending(true);
+      // http request here async sendRequest(props.fields)
+      setTimeout(() => props.setRequestPending(false), 3000);
       return true; // TODO: http request here
     },
   }),
 );
 
 export const FormField = (props) => (
-  <div style={{ position: 'relative' }}>
+  <FormFieldContainer
+    isInvalid={props.isInvalid}
+    text={
+      props.isInvalid
+        ? H.getLocaleItem(['errorMessages', props.field.name], props.locale)
+        : ''
+    }
+  >
     {
       props.field.component({
         value: props.value,
@@ -98,11 +110,7 @@ export const FormField = (props) => (
         placeholder: H.getLocaleItem([props.field.name], props.locale),
       })
     }
-    {
-      props.isInvalid
-      && <ErrorMessage>{H.getLocaleItem(['errorMessages', props.field.name], props.locale)}</ErrorMessage>
-    }
-  </div>
+  </FormFieldContainer>
 );
 
 export const Contacts = (props) => (
@@ -130,6 +138,10 @@ export const Contacts = (props) => (
         contactButtonText={H.getLocaleItem(['send'], props.locale)}
         attachButtonText={H.getLocaleItem(['attachFile'], props.locale)}
       />
+      {
+        props.requestPending && <div>Loading...</div>
+        // TODO: add loader if request pending props.requestPending && <Loader />
+      }
     </FormContainer>
     {
       props.allowContactSection

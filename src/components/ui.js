@@ -202,11 +202,19 @@ export const FormInput = styled(Input)`
   font-family: "Roboto";
   border-bottom: 1.5px solid #f18701; 
   border-color: ${({ isInvalid }) => isInvalid && 'red'};
+`;
 
-    &::after {
-      content: 'Hello!';
-      color: red;
-    }
+export const FormFieldContainer = styled.div`
+  position: relative;
+  &::after {
+    left: 0;
+    top: 22px;
+    color: red;
+    font-size: 10px;
+    position: absolute;
+    white-space: nowrap;
+    content: '${({ text }) => text}';
+  }
 `;
 
 export const FormTextArea = styled(TextArea)`
@@ -269,14 +277,4 @@ export const ContactsInfo = styled.div`
   margin-left: 31px;
   position: absolute;
   font-family: "Roboto"; 
-`;
-
-export const ErrorMessage = styled.div`
-  top: 10px;
-  color: red;
-  font-size: 10px;
-  position: absolute;
-  white-space: nowrap;
-  left: calc(100% + 8px);
-
 `;

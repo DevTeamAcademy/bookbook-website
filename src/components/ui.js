@@ -201,7 +201,12 @@ export const FormInput = styled(Input)`
   margin-bottom: 15px;
   font-family: "Roboto";
   border-bottom: 1.5px solid #f18701; 
-  border-color: ${({ isInvalid }) => isInvalid && 'red'}
+  border-color: ${({ isInvalid }) => isInvalid && 'red'};
+
+    &::after {
+      content: 'Hello!';
+      color: red;
+    }
 `;
 
 export const FormTextArea = styled(TextArea)`

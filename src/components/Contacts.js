@@ -22,9 +22,20 @@ const fields = [
     name: 'yourName',
     component: (props) => <FormInput {...props} />,
   },
-  { type: 'email', name: 'email', component: (props) => <FormInput {...props} /> },
-  { type: 'tel', name: 'phoneNumber', component: (props) => <FormInput {...props} /> },
-  { type: 'text', name: 'details', component: (props) => <FormTextArea {...props} /> },
+  {
+    type: 'email',
+    name: 'email',
+    component: (props) => <FormInput {...props} />,
+  },
+  {
+    type: 'tel',
+    name: 'phoneNumber',
+    component: (props) => <FormInput {...props} />,
+  },
+  {
+    type: 'text',
+    name: 'details',
+    component: (props) => <FormTextArea {...props} /> },
 ];
 
 const initialFields = {
@@ -41,14 +52,36 @@ const initialErrors = {
   details: false,
 };
 
-const checkContactFormErrors = () => {
+// Name validation
+const getNameError = name => {
+  const nameRegex = /^.{2,}$/;
+  const isValidName = nameRegex.test(name);
+  return !isValidName ? 'Name Is Required' : false;
+};
+
+// Email validation
+const getEmailError = email => {
+  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const isValidEmail = emailRegex.test(email);
+  return !isValidEmail ? 'Email Is Required' : false;
+};
+
+// PhoneNumber validation
+const getPhoneNumberError = number => {
+  const phoneNumberRegex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+  const isValidPhoneNumber = phoneNumberRegex.test(number);
+  return !isValidPhoneNumber //
+    ? 'Phone Number Is Required'
+    : false; // TODO ...
+};
+
+const checkContactFormErrors = (fields) => {
   return {
-    yourName: true,
-    email: true,
-    phoneNumber: false,
+    yourName: getNameError(fields.yourName),
+    email: getEmailError(fields.email),
+    phoneNumber: getPhoneNumberError(fields.phoneNumber),
     details: false,
   };
-  // TODO: check invalid fields, e.g. {yourName: true, email: true}
 };
 
 const enhance = compose(
@@ -68,9 +101,15 @@ const enhance = compose(
     },
     handleSubmit: (props) => () => {
       const errors = checkContactFormErrors(props.fields);
-      const isValid = errors.length === 0;
-      if (!isValid) return props.setErrors(errors);
-      return isValid;
+      const errorsArr = (Object.values(errors)).filter(Boolean);
+      const isValid = errorsArr.length === 0;
+      debugger;
+      if (!isValid) {
+        alert('Is NOT valid!');
+        return props.setErrors(errors);
+      }
+      alert('Is valid!');
+
       // TODO: send xhr request
     },
   }),
@@ -94,31 +133,7 @@ export const Contacts = (props) => (
             placeholder: H.getLocaleItem([field.name], props.locale),
           })
         ))
-        // fields.map((field, index) => {
-        //   return field.component({
-        //     type: field.type,
-        //     key: `contact-form-field-${field.name}-${index}`,
-        //     onChange: (e) => props.onFieldChange(e, field.name),
-        //     placeholder: H.getLocaleItem([field.name], props.locale),
-        //   });
-        // })
       }
-      {/* {<FormInput
-        type='text'
-        placeholder={H.getLocaleItem(['yourName'], props.locale)}
-      />
-      <FormInput
-        type='email'
-        placeholder={H.getLocaleItem(['email'], props.locale)}
-      />
-      <FormInput
-        type='tel'
-        placeholder={H.getLocaleItem(['phoneNumber'], props.locale)}
-      />
-      <FormTextArea
-        type='text'
-        placeholder={H.getLocaleItem(['details'], props.locale)}
-      />} */}
       <ContactButtons
         onSubmit={props.handleSubmit}
         allowAttachButton={props.allowAttachButton}

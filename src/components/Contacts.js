@@ -64,8 +64,8 @@ const getErrors = (values) => ({
 });
 
 const enhance = compose(
-  withState('fields', 'setFields', initialFieldValues),
-  withState('errors', 'setErrors', initialErrors),
+  withState('fields', 'setFields', { ...initialFieldValues }),
+  withState('errors', 'setErrors', { ...initialErrors }),
   withState('requestPending', 'setRequestPending', false),
   withHandlers({
     handleHideError: (props) => (name) => {
@@ -84,16 +84,15 @@ const enhance = compose(
       const isInvalid = Object.values(errors).some(err => err === true);
       if (isInvalid) return props.setErrors(errors);
       props.setRequestPending(true);
-      // http request here async sendRequest(props.fields)
-      setTimeout(() => props.setRequestPending(false), 3000);
-      return true; // TODO: http request here
+      // TODO: http request here async sendRequest(props.fields)
+      props.setRequestPending(false);
+      return true;
     },
   }),
 );
 
 export const FormField = (props) => (
   <FormFieldContainer
-    isInvalid={props.isInvalid}
     text={
       props.isInvalid
         ? H.getLocaleItem(['errorMessages', props.field.name], props.locale)
@@ -138,10 +137,6 @@ export const Contacts = (props) => (
         contactButtonText={H.getLocaleItem(['send'], props.locale)}
         attachButtonText={H.getLocaleItem(['attachFile'], props.locale)}
       />
-      {
-        props.requestPending && <div>Loading...</div>
-        // TODO: add loader if request pending props.requestPending && <Loader />
-      }
     </FormContainer>
     {
       props.allowContactSection
@@ -156,6 +151,9 @@ export const Contacts = (props) => (
         </ContactsInfo>
       </ContactSection>
       )
+    }
+    {
+      // TODO: add loader if request pending props.requestPending && <Loader />
     }
   </Fragment>
 );

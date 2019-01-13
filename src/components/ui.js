@@ -9,6 +9,7 @@ import { ifElse } from '../helpers';
 import {
   Box,
   Flex,
+  Text,
   createMinWithMediaQuery,
   createMaxWithMediaQuery } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
@@ -43,12 +44,61 @@ export const HeaderChangeLocaleWrapper = styled(Box)`
 `;
 
 export const FooterWrapper = styled(Flex)`
-  & > nav > a {
+  & > nav > a { ////////////////////////////////////////////kak eto raabotaet???
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     padding: 0px 20px;
     text-decoration: none;
-    color: ${themeGet('colors.mainOrange', 'white')}; 
+    color: ${themeGet('colors.white', 'white')}; 
   }
 `;
+
+
+export const FooterToo = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+`;
+
+// //////////////////////// tag for 2 links in footer
+export const LinkSergii = styled.div`
+display: grid;
+grid-template-rows: 1fr 1fr;
+text-align: center;
+&::a {         /////////////////////////почему эта шляпа не работает?
+  color: white;
+  text-decoration: none;
+};
+`;
+export const FooterLink = styled(Text)`
+display: none;
+  &::hover {
+    cursor: pointer;
+    opacity: 0.1;
+  }
+`;
+
+export const MarginB = styled.div`
+margin-bottom: 40px;
+`;
+export const PrivatP = styled.p`
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 24px;
+  color: #59ABE3;
+  padding: 15px;
+  padding-top: 0px;
+
+&:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+`;
+
 
 export const HamburgerBtnWrapper = styled('div')`
   width: 40px;

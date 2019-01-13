@@ -6,9 +6,9 @@ const UA = {
   home: 'домашня',
   aboutUs: 'про нас',
   contacts: 'контакти',
-  termsAndConditions: 'умови використання',
-  privacyPolicy: 'політика приватності',
-  copyright: '2018 © Всі права захищено',
+  termsAndConditions: 'Терміни та умови',
+  privacyPolicy: 'Політика приватності',
+  copyright: 'Copyrights 2019 @bookbook',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -44,8 +44,8 @@ const EN = {
   home: 'home',
   aboutUs: 'about us',
   contacts: 'contacts',
-  termsAndConditions: 'terms and conditions',
-  privacyPolicy: 'privacy policy',
+  termsAndConditions: 'Terms and Conditions',
+  privacyPolicy: 'Pivacy Policy',
   copyright: '2018 © All rights reserved',
   languages: [
     {
@@ -118,8 +118,8 @@ const PL = {
   home: 'home',
   aboutUs: 'about us',
   contacts: 'contacts',
-  termsAndConditions: 'terms and conditions',
-  privacyPolicy: 'privacy policy',
+  termsAndConditions: 'Terms and Conditions',
+  privacyPolicy: 'Privacy policy',
   copyright: '2018 © All rights reserved',
   languages: [
     {

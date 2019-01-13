@@ -78,6 +78,11 @@ export const Box = styled.div`
   ${borderRadius}
 `;
 
+export const Grid = styled(Box)`
+  ${flexDirection}
+  ${justifyContent}
+`;
+
 export const Flex = styled.div`
   ${top}
   ${left}

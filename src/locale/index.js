@@ -4,18 +4,18 @@ import * as GC from '../constants';
 
 const UA = {
   email: 'Емейл',
-  home: 'домашня',
+  home: 'Домашня',
   send: 'Надіслати',
   yourName: 'Ім\'я',
   details: 'Деталі',
-  aboutUs: 'про нас',
+  aboutUs: 'Про нас',
   contacts: 'Контакти',
   contactUs: 'Контакти',
   phoneNumber: 'Телефон',
   attachFile: 'Додати файл',
-  privacyPolicy: 'політика приватності',
-  copyright: '2018 © Всі права захищено',
-  termsAndConditions: 'умови використання',
+  copyright: '2019 © Всі права захищено',
+  termsAndConditions: 'Умови використання',
+  privacyPolicy: 'Політика конфіденційності',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -42,10 +42,13 @@ const UA = {
       прочитане... :)
     `,
   },
+  successMessages: {
+    contactDataSent: 'Ваші дані успішно надіслано',
+  },
   errorMessages: {
-    yourName: 'Будь ласка, введіть існуюче ім`я',
-    email: 'Електронна адреса невірна',
     phoneNumber: 'Номер невірний',
+    email: 'Електронна адреса невірна',
+    yourName: 'Будь ласка, введіть існуюче ім`я',
   },
   actions: {
     openBookbook: 'Відкрити @bookbook',
@@ -53,19 +56,19 @@ const UA = {
 };
 
 const EN = {
-  home: 'home',
+  home: 'Home',
   send: 'Send',
   email: 'Email',
   yourName: 'Name',
   details: 'Details',
-  aboutUs: 'about us',
-  contacts: 'contacts',
+  aboutUs: 'About us',
+  contacts: 'Contacts',
   contactUs: 'Contact Us',
   attachFile: 'Attach File',
   phoneNumber: 'Phone Number',
-  privacyPolicy: 'privacy policy',
-  copyright: '2018 © All rights reserved',
-  termsAndConditions: 'terms and conditions',
+  privacyPolicy: 'Privacy policy',
+  copyright: '2019 © All rights reserved',
+  termsAndConditions: 'Terms and conditions',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -91,9 +94,12 @@ const EN = {
       to save and distribute the read... :)
     `,
   },
+  successMessages: {
+    contactDataSent: 'Ваші дані успішно надіслано EN',
+  },
   errorMessages: {
-    yourName: 'Please, enter a valid name',
     email: 'Please, enter a valid email',
+    yourName: 'Please, enter a valid name',
     phoneNumber: 'Please, enter a valid phone number',
   },
   actions: {
@@ -102,19 +108,19 @@ const EN = {
 };
 
 const RU = {
-  home: 'home',
+  home: 'Home',
   send: 'Send',
   email: 'Email',
   yourName: 'Name',
   details: 'Details',
-  aboutUs: 'about us',
-  contacts: 'contacts',
+  aboutUs: 'About us',
+  contacts: 'Contacts',
   contactUs: 'Contact Us',
   attachFile: 'Attach File',
   phoneNumber: 'Phone Number',
-  privacyPolicy: 'privacy policy',
-  copyright: '2018 © All rights reserved',
-  termsAndConditions: 'terms and conditions',
+  privacyPolicy: 'Privacy policy',
+  copyright: '2019 © All rights reserved',
+  termsAndConditions: 'Terms and conditions',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -140,9 +146,12 @@ const RU = {
       to save and distribute the read... :)
     `,
   },
+  successMessages: {
+    contactDataSent: 'Ваші дані успішно надіслано RU',
+  },
   errorMessages: {
-    yourName: 'Please, enter a valid name RU',
     email: 'Please, enter a valid email RU',
+    yourName: 'Please, enter a valid name RU',
     phoneNumber: 'Please, enter a valid phone number RU',
   },
   actions: {
@@ -151,19 +160,19 @@ const RU = {
 };
 
 const PL = {
-  home: 'home',
+  home: 'Home',
   send: 'Send',
   email: 'Email',
   yourName: 'Name',
   details: 'Details',
-  aboutUs: 'about us',
-  contacts: 'contacts',
+  aboutUs: 'About us',
+  contacts: 'Contacts',
   contactUs: 'Contact Us',
   attachFile: 'Attach File',
   phoneNumber: 'Phone Number',
-  privacyPolicy: 'privacy policy',
-  copyright: '2018 © All rights reserved',
-  termsAndConditions: 'terms and conditions',
+  privacyPolicy: 'Privacy policy',
+  copyright: '2019 © All rights reserved',
+  termsAndConditions: 'Terms and conditions',
   languages: [
     {
       localeName: GC.LOCALE_NAME_EN,
@@ -189,9 +198,12 @@ const PL = {
       to save and distribute the read... :)
     `,
   },
+  successMessages: {
+    contactDataSent: 'Ваші дані успішно надіслано PL',
+  },
   errorMessages: {
-    yourName: 'Please, enter a valid name PL',
     email: 'Please, enter a valid email PL',
+    yourName: 'Please, enter a valid name PL',
     phoneNumber: 'Please, enter a valid phone number PL',
   },
   actions: {

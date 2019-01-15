@@ -1,18 +1,24 @@
 import React, { Fragment } from 'react';
-import { compose, withState, withHandlers } from 'recompose';
-
-// global
-import * as GC from '../constants';
+import {
+  compose,
+  withState,
+  withHandlers,
+} from 'recompose';
 // components
 import { SectionTitle } from './SectionTitle';
 import { ContactButtons } from './ContactButtons';
+// global
+import * as GC from '../constants';
 // helpers
 import * as H from '../helpers';
 // ui
 import {
+  Loader,
   FormInput,
+  ResultWindow,
   FormTextArea,
   ContactsInfo,
+  FadeContainer,
   FormContainer,
   ContactSection,
   FormFieldContainer,
@@ -43,30 +49,31 @@ const fields = [
 ];
 
 const initialFieldValues = {
-  yourName: '',
   email: '',
-  phoneNumber: '',
   details: '',
+  yourName: '',
+  phoneNumber: '',
 };
 
 const initialErrors = {
-  yourName: false,
   email: false,
-  phoneNumber: false,
   details: false,
+  yourName: false,
+  phoneNumber: false,
 };
 
 const getErrors = (values) => ({
-  yourName: !GC.USER_NAME_REGEX.test(values.yourName),
-  email: !GC.EMAIL_REGEX.test(values.email),
-  phoneNumber: !GC.PHONE_NUMBER_REGEX.test(values.phoneNumber),
   details: false,
+  email: !GC.EMAIL_REGEX.test(values.email),
+  yourName: !GC.USER_NAME_REGEX.test(values.yourName),
+  phoneNumber: !GC.PHONE_NUMBER_REGEX.test(values.phoneNumber),
 });
 
 const enhance = compose(
-  withState('fields', 'setFields', initialFieldValues),
   withState('errors', 'setErrors', initialErrors),
+  withState('fields', 'setFields', initialFieldValues),
   withState('requestPending', 'setRequestPending', false),
+  withState('showResultWindow', 'setShowResultWindow', false),
   withHandlers({
     handleHideError: (props) => (name) => {
       const newErrors = props.errors;
@@ -81,21 +88,37 @@ const enhance = compose(
     },
     handleSubmit: (props) => () => {
       const errors = getErrors(props.fields);
-      const isInvalid = Object.values(errors).some(err => err === true);
-      if (isInvalid) return props.setErrors(errors);
+      const invalid = Object.values(errors).some(err => err === true);
+      if (invalid) return props.setErrors(errors);
       props.setRequestPending(true);
-      // http request here async sendRequest(props.fields)
-      setTimeout(() => props.setRequestPending(false), 3000);
-      return true; // TODO: http request here
+      // Request:
+      const Http = new XMLHttpRequest();
+      const params = JSON.stringify({
+        title: props.fields.yourName, // Some random data
+        body: props.fields.email, // Some random data
+        userId: 1, // Some random data
+      });
+      Http.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+      Http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      Http.onreadystatechange = () => {
+        if (Http.readyState === 4 && Http.status === 201) { // Change to 200 someday or not.
+          console.log(Http.responseText); // For demo purpose
+          props.setRequestPending(false);
+          props.setShowResultWindow(true);
+          setTimeout(() => { props.setShowResultWindow(false); }, 2000);
+        }
+      };
+      Http.send(params);
+      return true;
     },
   }),
 );
 
 export const FormField = (props) => (
   <FormFieldContainer
-    isInvalid={props.isInvalid}
+    invalid={props.invalid}
     text={
-      props.isInvalid
+      props.invalid
         ? H.getLocaleItem(['errorMessages', props.field.name], props.locale)
         : ''
     }
@@ -104,7 +127,7 @@ export const FormField = (props) => (
       props.field.component({
         value: props.value,
         type: props.field.type,
-        isInvalid: props.isInvalid,
+        invalid: props.invalid,
         onFocus: () => props.handleHideError(props.field.name),
         onChange: (e) => props.handleFieldChange(e, props.field.name),
         placeholder: H.getLocaleItem([props.field.name], props.locale),
@@ -125,7 +148,7 @@ export const Contacts = (props) => (
             field={field}
             locale={props.locale}
             value={props.fields[field.name]}
-            isInvalid={props.errors[field.name]}
+            invalid={props.errors[field.name]}
             handleHideError={props.handleHideError}
             key={`contact-form-field-${field.name}`}
             handleFieldChange={props.handleFieldChange}
@@ -138,10 +161,6 @@ export const Contacts = (props) => (
         contactButtonText={H.getLocaleItem(['send'], props.locale)}
         attachButtonText={H.getLocaleItem(['attachFile'], props.locale)}
       />
-      {
-        props.requestPending && <div>Loading...</div>
-        // TODO: add loader if request pending props.requestPending && <Loader />
-      }
     </FormContainer>
     {
       props.allowContactSection
@@ -156,6 +175,24 @@ export const Contacts = (props) => (
         </ContactsInfo>
       </ContactSection>
       )
+    }
+    {
+     props.requestPending
+      && (
+      <FadeContainer>
+        <Loader />
+      </FadeContainer>
+      )
+    }
+    {
+     props.showResultWindow
+     && (
+     <FadeContainer>
+       <ResultWindow>
+         {H.getLocaleItem(['successMessages', 'contactDataSent'], props.locale)}
+       </ResultWindow>
+     </FadeContainer>
+     )
     }
   </Fragment>
 );

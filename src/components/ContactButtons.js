@@ -1,5 +1,9 @@
 import React from 'react';
-import { FormButtonsContainer, AttachButton, ContactButton } from './ui';
+import {
+  AttachButton,
+  ContactButton,
+  FormButtonsContainer,
+} from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const ContactButtons = (props) => (

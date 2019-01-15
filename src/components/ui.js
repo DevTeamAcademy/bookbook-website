@@ -9,12 +9,10 @@ import { ifElse } from '../helpers';
 import {
   Box,
   Flex,
-  // Text,
   Input,
   TextArea,
   createMinWithMediaQuery,
   createMaxWithMediaQuery,
-  // Button
 } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
 
@@ -63,8 +61,6 @@ export const HamburgerBtnWrapper = styled('div')`
   position: relative;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
-
-  
 
   ${createMaxWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: block;
@@ -119,8 +115,8 @@ export const BarNavigationWrapper = posed(styled(Box)`
   }
 `)({
   opened: {
-    opacity: 1,
     y: '0px',
+    opacity: 1,
     staggerChildren: 100,
   },
   closed: {
@@ -201,11 +197,12 @@ export const FormInput = styled(Input)`
   margin-bottom: 15px;
   font-family: "Roboto";
   border-bottom: 1.5px solid #f18701; 
-  border-color: ${({ isInvalid }) => isInvalid && 'red'};
+  border-color: ${({ invalid }) => invalid && 'red'};
 `;
 
 export const FormFieldContainer = styled.div`
   position: relative;
+
   &::after {
     left: 0;
     top: 22px;
@@ -227,10 +224,10 @@ export const FormTextArea = styled(TextArea)`
 `;
 
 export const FormButtonsContainer = styled(Flex)`
-margin-top: 33px; 
-margin-bottom: 33px; 
-justify-content: space-between; 
-`;
+  margin-top: 33px; 
+  margin-bottom: 33px; 
+  justify-content: space-between; 
+  `;
 
 export const AttachButton = styled(Flex)`
   height: 35px;
@@ -260,7 +257,7 @@ export const ContactButton = styled(AttachButton)`
   background-color: #f18701;
     
     &::before {
-        content: "";
+      content: "";
     }
 `;
 
@@ -277,4 +274,50 @@ export const ContactsInfo = styled.div`
   margin-left: 31px;
   position: absolute;
   font-family: "Roboto"; 
+`;
+
+export const FadeContainer = styled.div`
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.3);
+`;
+
+export const Loader = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #f18701;
+  border-bottom: 8px solid #f18701;
+  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+  
+  @-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+export const ResultWindow = styled.div`
+  color: green;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: calc(50% - 100px);
+  left: calc(50% - 150px);
+  justify-content: center;
+  background-color: rgba(250, 250, 250, 0.8);
 `;

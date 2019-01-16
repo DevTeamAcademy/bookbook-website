@@ -15,6 +15,7 @@ import {
   border,
   zIndex,
   display,
+  gridTemplateColumns,
   position,
   fontSize,
   flexWrap,
@@ -76,6 +77,34 @@ export const Box = styled.div`
   ${borderColor}
   ${borderBottom}
   ${borderRadius}
+`;
+
+export const Grid = styled.div`
+  ${top}
+  ${left}
+  ${color}
+  ${space}
+  ${width}
+  ${right}
+  ${height}
+  ${bottom}
+  ${border}
+  ${zIndex}
+  ${fontSize}
+  ${flexWrap}
+  ${position}
+  ${boxShadow}
+  ${borderTop}
+  ${borderLeft}
+  ${alignItems}
+  ${borderRight}
+  ${borderColor}
+  ${borderBottom}
+  ${borderRadius}
+  ${flexDirection}
+  ${justifyContent}
+  ${gridTemplateColumns}
+  display: grid;
 `;
 
 export const Flex = styled.div`

@@ -4,7 +4,7 @@ import { withTheme } from 'styled-components';
 import { themeGet } from 'styled-system';
 // components
 import SocialNav from './SocialNav';
-import { FooterWrapper } from './ui';
+import { FooterWrapper, FooterSection, FooterLink } from './ui';
 // helpers
 import * as H from '../helpers';
 // ui
@@ -14,10 +14,10 @@ import { Text } from '../ui';
 export const FooterNavigation = ({ locale }) => (
   <nav>
     <Link href='./terms' passHref>
-      <a>{H.getLocaleItem(['termsAndConditions'], locale)}</a>
+      <FooterLink color='#59ABE3'>{H.getLocaleItem(['termsAndConditions'], locale)}</FooterLink>
     </Link>
     <Link href='./privacy' passHref>
-      <a>{H.getLocaleItem(['privacyPolicy'], locale)}</a>
+      <FooterLink color='#59ABE3'>{H.getLocaleItem(['privacyPolicy'], locale)}</FooterLink>
     </Link>
   </nav>
 );
@@ -26,18 +26,24 @@ export const Footer = props => (
   <footer>
     <FooterWrapper
       p={15}
-      fontSize={10}
+      fontSize={24}
       alignItems='center'
       flexDirection='column'
-      bg={themeGet('colors.darkGrey', 'grey')(props)}
+      bg={themeGet('colors.mainBlack', '#363135')(props)}
     >
-      <SocialNav {...props} />
+      <FooterSection
+        gridTemplateColumns='1fr'
+      >
+        <SocialNav {...props} />
+        <FooterNavigation {...props} />
+      </FooterSection>
       <Text
-        color={themeGet('colors.white', 'white')(props)}
+        // color={themeGet('colors.red', 'white')(props)}
+        color='rgba(255, 255, 255, 0.3)'
+        my='20px'
       >
         {H.getLocaleItem(['copyright'], props.locale)}
       </Text>
-      <FooterNavigation {...props} />
     </FooterWrapper>
   </footer>
 );

@@ -9,6 +9,7 @@ import { ifElse } from '../helpers';
 import {
   Box,
   Flex,
+  Grid,
   createMinWithMediaQuery,
   createMaxWithMediaQuery } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
@@ -39,14 +40,6 @@ export const HeaderChangeLocaleWrapper = styled(Box)`
   display: none;
   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: block;
-  }
-`;
-
-export const FooterWrapper = styled(Flex)`
-  & > nav > a {
-    padding: 0px 20px;
-    text-decoration: none;
-    color: ${themeGet('colors.mainOrange', 'white')}; 
   }
 `;
 
@@ -90,6 +83,44 @@ export const HamburgerBtnWrapper = styled('div')`
   & > span:nth-child(3) {
     top: ${({ opened }) => ifElse(opened, '15px', '30px')};
     transform: ${({ opened }) => ifElse(opened, 'rotate(-135deg)', 'rotate(0deg)')};
+  }
+`;
+
+export const FooterLink = styled(Box)`
+  &:hover {
+    cursor: pointer;
+    color: #FBFBFB;
+  }
+`;
+
+export const FooterWrapper = styled(Flex)`
+  & > nav > a { ////////////////////////////////////////////kak eto raabotaet???
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0px 20px;
+    text-decoration: none;
+    color: ${themeGet('colors.white', 'white')}; 
+  }
+`;
+
+export const SocialIconElement = styled.a`
+  margin: 0 10px;
+`;
+
+export const SocialsWrapper = styled.nav`
+  width: 250px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+`;
+
+
+export const FooterSection = styled(Grid)`
+  justify-items: center;
+  align-items: center;
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    grid-template-columns: 1fr 1fr;
   }
 `;
 

@@ -15,7 +15,6 @@ import {
   border,
   zIndex,
   display,
-  gridTemplateColumns,
   position,
   fontSize,
   flexWrap,
@@ -36,7 +35,8 @@ import {
   borderRadius,
   letterSpacing,
   flexDirection,
-  justifyContent } from 'styled-system';
+  justifyContent,
+  gridTemplateColumns } from 'styled-system';
 // helpers
 import * as H from '../helpers';
 // //////////////////////////////////////////////////////////////////////////////

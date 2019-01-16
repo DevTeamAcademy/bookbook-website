@@ -94,14 +94,6 @@ export const FooterLink = styled(Box)`
 `;
 
 export const FooterWrapper = styled(Flex)`
-  & > nav > a { ////////////////////////////////////////////kak eto raabotaet???
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 0px 20px;
-    text-decoration: none;
-    color: ${themeGet('colors.white', 'white')}; 
-  }
 `;
 
 export const SocialIconElement = styled.a`
@@ -117,8 +109,6 @@ export const SocialsWrapper = styled.nav`
 
 
 export const FooterSection = styled(Grid)`
-  justify-items: center;
-  align-items: center;
   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     grid-template-columns: 1fr 1fr;
   }

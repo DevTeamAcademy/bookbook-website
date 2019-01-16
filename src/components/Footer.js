@@ -32,6 +32,8 @@ export const Footer = props => (
       bg={themeGet('colors.mainBlack', '#363135')(props)}
     >
       <FooterSection
+        alignItems='center'
+        justifyContent='center'
         gridTemplateColumns='1fr'
       >
         <SocialNav {...props} />

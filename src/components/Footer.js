@@ -14,10 +14,10 @@ import { Text } from '../ui';
 export const FooterNavigation = ({ locale }) => (
   <nav>
     <Link href='./terms' passHref>
-      <FooterLink color='#59ABE3'>{H.getLocaleItem(['termsAndConditions'], locale)}</FooterLink>
+      <FooterLink color='#59ABE3' pb='15px'>{H.getLocaleItem(['termsAndConditions'], locale)}</FooterLink>
     </Link>
     <Link href='./privacy' passHref>
-      <FooterLink color='#59ABE3'>{H.getLocaleItem(['privacyPolicy'], locale)}</FooterLink>
+      <FooterLink color='#59ABE3' pb='25px'>{H.getLocaleItem(['privacyPolicy'], locale)}</FooterLink>
     </Link>
   </nav>
 );
@@ -32,17 +32,22 @@ export const Footer = props => (
       bg={themeGet('colors.mainBlack', '#363135')(props)}
     >
       <FooterSection
+        mt='35px'
+        mb='10px'
+        px='35px'
+        width='100%'
+        textAlign='center'
         alignItems='center'
-        justifyContent='center'
+        justifyContent='space-between'
         gridTemplateColumns='1fr'
       >
-        <SocialNav {...props} />
         <FooterNavigation {...props} />
+        <SocialNav {...props} />
       </FooterSection>
       <Text
         // color={themeGet('colors.red', 'white')(props)}
         color='rgba(255, 255, 255, 0.3)'
-        my='20px'
+        mb='20px'
       >
         {H.getLocaleItem(['copyright'], props.locale)}
       </Text>

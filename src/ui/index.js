@@ -94,6 +94,7 @@ export const Grid = styled.div`
   ${flexWrap}
   ${position}
   ${boxShadow}
+  ${textAlign}
   ${borderTop}
   ${borderLeft}
   ${alignItems}

@@ -105,12 +105,12 @@ export const SocialsWrapper = styled.nav`
   align-items: center;
   display: flex;
   justify-content: space-between;
-`;
+ `;
 
 
 export const FooterSection = styled(Grid)`
   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: max-content max-content;
   }
 `;
 

@@ -44,7 +44,7 @@ export const HeaderChangeLocaleWrapper = styled(Box)`
 `;
 
 export const FooterWrapper = styled(Flex)`
-  & > nav > a { ////////////////////////////////////////////kak eto raabotaet???
+  & > nav > a {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -67,7 +67,7 @@ export const LinkSergii = styled.div`
 display: grid;
 grid-template-rows: 1fr 1fr;
 text-align: center;
-&::a {         /////////////////////////почему эта шляпа не работает?
+&::a {
   color: white;
   text-decoration: none;
 };

@@ -14,16 +14,17 @@
   },
   "homepage": "https://github.com/DevTeamAcademy/bookbook-website#readme",
   "dependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "next": "^7.0.2",
     "ramda": "^0.26.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-pose": "^4.0.4",
+    "react-testing-library": "^5.4.4",
     "recompose": "^0.30.0",
     "styled-components": "^4.1.2",
-    "styled-system": "^3.1.11",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.7.1"
+    "styled-system": "^3.1.11"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

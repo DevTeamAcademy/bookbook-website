@@ -1,8 +1,10 @@
 import 'react-testing-library/cleanup-after-each';
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render, cleanup, fireEvent } from 'react-testing-library';
 import { shallow } from 'enzyme';
 import Contacts, { fields } from '../Contacts';
+
+afterEach(cleanup);
 
 describe('Contacts', () => {
   it('should render correctly in "debug" mode', () => {

@@ -1,0 +1,1 @@
+export { Paperclip } from './paperclip';

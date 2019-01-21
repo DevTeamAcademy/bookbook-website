@@ -162,14 +162,14 @@ export const BarNavigationItemWrapper = posed(styled('div')`
 
 // Contacts form styles
 export const Title = styled(Flex)`
-  height: 55px; 
-  color: #1e1b18; 
-  font-size: 24px; 
+  height:55px;
+  color: #1e1b18;  
+  font-size: 24px;
   font-weight: bold; 
-  position: relative; 
-  font-family: Roboto;  /*TODO: connect this font*/
-  align-items: center; 
-  flex-direction: column; 
+  position: relative;
+  align-items: center;
+  font-family:'Roboto';  /*TODO: connect this font*/
+  flex-direction: column;
   justify-content: center;
 `;
 
@@ -221,44 +221,6 @@ export const FormTextArea = styled(TextArea)`
   font-size: 12px;
   font-family: "Roboto";
   border-bottom: 1.5px solid #f18701;
-`;
-
-export const FormButtonsContainer = styled(Flex)`
-  margin-top: 33px; 
-  margin-bottom: 33px; 
-  justify-content: space-between; 
-  `;
-
-export const AttachButton = styled(Flex)`
-  height: 35px;
-  width: 108px;
-  color: #f18701;
-  cursor: pointer;
-  font-size: 12px;
-  margin-right: 23px;
-  align-items: center;
-  font-family: "Roboto";  
-  justify-content: center;
-  background-color: #ffffff; 
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12);
-  
-    &::before {
-      margin-left: -5px;
-      transform: scale(0.5);
-      content: url(../../static/clip.png);
-    }
-`;
-
-export const ContactButton = styled(AttachButton)`
-  color: #ffffff;
-  font-size: 18px;
-  margin-right: 0;
-  margin-left: 23px;
-  background-color: #f18701;
-    
-    &::before {
-      content: "";
-    }
 `;
 
 export const ContactSection = styled(Flex)`

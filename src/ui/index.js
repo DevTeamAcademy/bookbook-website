@@ -133,7 +133,12 @@ export const Button = styled.button`
   ${boxShadow}
   ${borderColor}
   ${borderRadius}
-  cursor: ${({ cursor }) => or(cursor, 'initial')}
+  cursor: ${({ cursor }) => or(cursor, 'initial')};
+  &::before {
+    margin-left: ${({ ml }) => ml || ''}px;
+    content: ${({ content }) => content || ''};
+    transform: ${({ transform }) => transform || ''}; 
+  }
 `;
 
 export const Input = styled.input`

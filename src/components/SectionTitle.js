@@ -1,18 +1,19 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 // TODO: Delete comments if it not used
 // ui
-// import { Text, Input, TextArea } from '../ui';
+import {
+  Line,
+  Title,
+} from './ui';
 // import styled from 'styled-components';
-import { Title, Line } from './ui';
+
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const SectionTitle = (props) => (
-  <Fragment>
-    <Title>
-      {props.titleText}
-      <Line />
-    </Title>
-  </Fragment>
+  <Title>
+    {props.titleText}
+    <Line />
+  </Title>
 );
 
 export default SectionTitle;

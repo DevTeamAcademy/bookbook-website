@@ -38,6 +38,7 @@ export const Footer = props => (
         width='100%'
         textAlign='center'
         justifyContent='center'
+        flexWrap='wrap-reverse'
       >
         <FooterNavigation {...props} />
         <SocialNav {...props} />

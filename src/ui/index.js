@@ -43,10 +43,7 @@ import * as H from '../helpers';
 // //////////////////////////////////////////////////////////////////////////////
 
 export const createMinWithMediaQuery = n => `
-  @media screen and (min-width: ${n}px) {
-  display: flex;
-  justify-content: space-between;
-  }
+  @media screen and (min-width: ${n}px) 
 `;
 
 export const createMaxWithMediaQuery = n => `

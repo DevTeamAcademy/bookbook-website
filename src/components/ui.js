@@ -113,6 +113,7 @@ export const FooterSection = styled(Flex)`
    {
     display: flex;
     flex-wrap: wrap-reverse;
+    justify-content: space-between;
   }
 `;
 

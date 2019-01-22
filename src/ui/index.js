@@ -39,14 +39,18 @@ import {
   gridTemplateColumns } from 'styled-system';
 // helpers
 import * as H from '../helpers';
+// import { wrap } from 'module'; no use
 // //////////////////////////////////////////////////////////////////////////////
 
 export const createMinWithMediaQuery = n => `
-  @media screen and (min-width: ${n}px)
+  @media screen and (min-width: ${n}px) {
+  display: flex;
+  justify-content: space-between;
+  }
 `;
 
 export const createMaxWithMediaQuery = n => `
-  @media screen and (max-width: ${n}px)
+  @media screen and (max-width: ${n}px) 
 `;
 
 export const Box = styled.div`

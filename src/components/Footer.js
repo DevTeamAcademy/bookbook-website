@@ -4,7 +4,7 @@ import { withTheme } from 'styled-components';
 import { themeGet } from 'styled-system';
 // components
 import SocialNav from './SocialNav';
-import { FooterWrapper, FooterSection, FooterLink } from './ui';
+import { FooterWrapper, FooterSection, FooterLink, FooterBox } from './ui';
 // helpers
 import * as H from '../helpers';
 // ui
@@ -12,14 +12,14 @@ import { Text } from '../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const FooterNavigation = ({ locale }) => (
-  <nav>
+  <FooterBox>
     <Link href='./terms' passHref>
       <FooterLink color='#59ABE3' pb='15px'>{H.getLocaleItem(['termsAndConditions'], locale)}</FooterLink>
     </Link>
     <Link href='./privacy' passHref>
       <FooterLink color='#59ABE3' pb='25px'>{H.getLocaleItem(['privacyPolicy'], locale)}</FooterLink>
     </Link>
-  </nav>
+  </FooterBox>
 );
 
 export const Footer = props => (
@@ -34,12 +34,10 @@ export const Footer = props => (
       <FooterSection
         mt='35px'
         mb='10px'
-        px='35px'
+        px='50px'
         width='100%'
         textAlign='center'
-        alignItems='center'
-        justifyContent='space-between'
-        gridTemplateColumns='1fr'
+        justifyContent='center'
       >
         <FooterNavigation {...props} />
         <SocialNav {...props} />

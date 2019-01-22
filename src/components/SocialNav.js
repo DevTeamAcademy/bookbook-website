@@ -2,6 +2,7 @@ import React from 'react';
 // icons
 import { compose, withState } from 'recompose';
 import * as I from '../icons';
+// components
 import { SocialIconElement, SocialsWrapper } from './ui';
 // /////////////////////////////////////////////////////////////////////////////////////////////////
 

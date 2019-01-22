@@ -9,7 +9,7 @@ import { ifElse } from '../helpers';
 import {
   Box,
   Flex,
-  Grid,
+  // Grid, no use
   createMinWithMediaQuery,
   createMaxWithMediaQuery } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
@@ -88,8 +88,8 @@ export const HamburgerBtnWrapper = styled('div')`
 
 export const FooterLink = styled(Box)`
   &:hover {
-    cursor: pointer;
     color: #FBFBFB;
+    cursor: pointer;
   }
 `;
 
@@ -102,16 +102,23 @@ export const SocialIconElement = styled.a`
 
 export const SocialsWrapper = styled.nav`
   width: 250px;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: space-between;
  `;
 
 
-export const FooterSection = styled(Grid)`
-  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
-    grid-template-columns: max-content max-content;
+export const FooterSection = styled(Flex)`
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)}
+   {
+    display: flex;
+    flex-wrap: wrap-reverse;
   }
+`;
+
+export const FooterBox = styled.div`
+  padding-top: 15px;
+  text-align: center;
 `;
 
 export const BarNavigationWrapper = posed(styled(Box)`

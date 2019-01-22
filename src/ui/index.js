@@ -39,7 +39,6 @@ import {
   gridTemplateColumns } from 'styled-system';
 // helpers
 import * as H from '../helpers';
-// import { wrap } from 'module'; no use
 // //////////////////////////////////////////////////////////////////////////////
 
 export const createMinWithMediaQuery = n => `

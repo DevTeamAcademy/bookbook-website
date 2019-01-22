@@ -1,6 +1,8 @@
 import React from 'react';
-// icons
 import { compose, withState } from 'recompose';
+// helpers
+import { genShortId } from '../helpers';
+// icons
 import * as I from '../icons';
 // components
 import { SocialIconElement, SocialsWrapper } from './ui';
@@ -39,7 +41,7 @@ export const SocialNav = () => (
   <SocialsWrapper>
     {
       socialData.map((icon) => (
-        <SocialIcon {...icon} />
+        <SocialIcon {...icon} key={genShortId()} />
       ))
     }
   </SocialsWrapper>

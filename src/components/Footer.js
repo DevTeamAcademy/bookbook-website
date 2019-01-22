@@ -4,22 +4,22 @@ import { withTheme } from 'styled-components';
 import { themeGet } from 'styled-system';
 // components
 import SocialNav from './SocialNav';
-import { FooterWrapper, FooterSection, FooterLink, FooterBox } from './ui';
+import { FooterWrapper, FooterSection, FooterLink, FooterNav } from './ui';
 // helpers
 import * as H from '../helpers';
 // ui
 import { Text } from '../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
-
+// TODO: With theme
 export const FooterNavigation = ({ locale }) => (
-  <FooterBox>
+  <FooterNav>
     <Link href='./terms' passHref>
       <FooterLink color='#59ABE3' pb='15px'>{H.getLocaleItem(['termsAndConditions'], locale)}</FooterLink>
     </Link>
     <Link href='./privacy' passHref>
       <FooterLink color='#59ABE3' pb='25px'>{H.getLocaleItem(['privacyPolicy'], locale)}</FooterLink>
     </Link>
-  </FooterBox>
+  </FooterNav>
 );
 
 export const Footer = props => (

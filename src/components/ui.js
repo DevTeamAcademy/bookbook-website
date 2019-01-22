@@ -9,7 +9,6 @@ import { ifElse } from '../helpers';
 import {
   Box,
   Flex,
-  // Grid, no use
   createMinWithMediaQuery,
   createMaxWithMediaQuery } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
@@ -105,19 +104,18 @@ export const SocialsWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
- `;
+`;
 
 
 export const FooterSection = styled(Flex)`
-  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)}
-   {
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: space-between;
   }
 `;
 
-export const FooterBox = styled.div`
+export const FooterNav = styled.nav`
   padding-top: 15px;
   text-align: center;
 `;

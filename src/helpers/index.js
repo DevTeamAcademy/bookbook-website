@@ -7,6 +7,7 @@ import {
   pathOr,
   isEmpty,
   complement } from 'ramda';
+import shortid from 'shortid';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ADDITION RAMDA HELPERS
@@ -29,3 +30,8 @@ export const ifElse = (predicate, ifSt, elseSt) => {
 };
 
 export const getLocaleItem = (path, locale) => pathOr('', path, locale);
+
+// SHORT ID GENERATOR
+export const genShortId = () => (
+  shortid.generate()
+);

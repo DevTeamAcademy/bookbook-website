@@ -6,9 +6,10 @@ import {
 } from 'recompose';
 // components
 import { SectionTitle } from './SectionTitle';
-import { ContactButtons } from './ContactButtons';
+import ContactButtons from './ContactButtons';
 // global
 import * as GC from '../constants';
+import * as TC from '../constants/test-constants';
 // helpers
 import * as H from '../helpers';
 // ui
@@ -29,22 +30,22 @@ export const fields = [
   {
     type: 'text',
     name: 'yourName',
-    component: (props) => <FormInput data-testid={GC.TEST_CONTACT_FORM_YOUR_NAME} {...props} />,
+    component: (props) => <FormInput data-testid={TC.TEST_CONTACT_FORM_YOUR_NAME} {...props} />,
   },
   {
     type: 'email',
     name: 'email',
-    component: (props) => <FormInput data-testid={GC.TEST_CONTACT_FORM_EMAIL} {...props} />,
+    component: (props) => <FormInput data-testid={TC.TEST_CONTACT_FORM_EMAIL} {...props} />,
   },
   {
     type: 'tel',
     name: 'phoneNumber',
-    component: (props) => <FormInput data-testid={GC.TEST_CONTACT_FORM_PHONE_NUMBER} {...props} />,
+    component: (props) => <FormInput data-testid={TC.TEST_CONTACT_FORM_PHONE_NUMBER} {...props} />,
   },
   {
     type: 'text',
     name: 'details',
-    component: (props) => <FormTextArea data-testid={GC.TEST_CONTACT_FORM_DETAILS} {...props} />,
+    component: (props) => <FormTextArea data-testid={TC.TEST_CONTACT_FORM_DETAILS} {...props} />,
   },
 ];
 

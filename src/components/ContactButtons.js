@@ -1,8 +1,11 @@
 import React from 'react';
+// ui
 import {
   Button,
   Flex,
 } from '../ui';
+// global
+import * as TC from '../constants/test-constants';
 import {
   Paperclip,
 } from './icons';
@@ -51,9 +54,12 @@ export const ContactButtons = (props) => (
       alignItems='center'
       fontFamily='Roboto'
       justifyContent='center'
+      data-testid={TC.TEST_CONTACT_FORM_SEND_BUTTON}
       boxShadow='0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 0 1px 0 rgba(0, 0, 0, 0.12)'
     >
       {props.contactButtonText}
     </Button>
   </Flex>
 );
+
+export default ContactButtons;

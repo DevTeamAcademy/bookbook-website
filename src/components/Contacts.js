@@ -29,22 +29,22 @@ export const fields = [
   {
     type: 'text',
     name: 'yourName',
-    component: (props) => <FormInput data-testid='yourName' {...props} />,
+    component: (props) => <FormInput data-testid={GC.TEST_CONTACT_FORM_YOUR_NAME} {...props} />,
   },
   {
     type: 'email',
     name: 'email',
-    component: (props) => <FormInput data-testid='email' {...props} />,
+    component: (props) => <FormInput data-testid={GC.TEST_CONTACT_FORM_EMAIL} {...props} />,
   },
   {
     type: 'tel',
     name: 'phoneNumber',
-    component: (props) => <FormInput data-testid='phoneNumber' {...props} />,
+    component: (props) => <FormInput data-testid={GC.TEST_CONTACT_FORM_PHONE_NUMBER} {...props} />,
   },
   {
     type: 'text',
     name: 'details',
-    component: (props) => <FormTextArea data-testid='details' {...props} />,
+    component: (props) => <FormTextArea data-testid={GC.TEST_CONTACT_FORM_DETAILS} {...props} />,
   },
 ];
 

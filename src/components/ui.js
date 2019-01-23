@@ -42,6 +42,41 @@ export const HeaderChangeLocaleWrapper = styled(Box)`
   }
 `;
 
+// ///////////////////////////////////////////////////////////
+// Vidoe section
+export const OurDemo = styled(Flex)`
+ display: flex;
+ color: #FBFBFB;
+ font-size: 48px;
+ padding-top: 37px;
+ text-align: center;
+ align-items: center;
+ flex-direction: column;
+ background-color: #363135;
+
+ ${createMaxWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    font-size: 28px;
+  }
+
+ ${createMaxWithMediaQuery(GC.SECOND_UI_BREAKPOINT)} {
+    font-size: 18px;
+  }
+
+`;
+
+export const UnderLine = styled.div`
+ width: 95px;
+ height: 9px;
+ margin: 10px 0;
+ border-radius: 20px;
+ background-color: #9D8C70;
+`;
+
+export const OnlyVideoStyle = styled.div`
+padding: 30px 0;
+`;
+
+
 export const FooterWrapper = styled(Flex)`
   & > nav > a {
     padding: 0px 20px;

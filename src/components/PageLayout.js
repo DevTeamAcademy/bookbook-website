@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 // components
 import Footer from './Footer';
 import Header from './Header';
-import VideoSection from './VideoDemo';
+import VideoSection from './VideoSection';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const PageLayout = props => (

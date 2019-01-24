@@ -136,3 +136,11 @@ export const Image = styled.img`
   ${width}
   ${height}
 `;
+// add global component 'Video' by sergii
+export const Video = styled.video`
+  ${width}
+  ${space}
+  ${height}
+  ${borderRadius}
+  controls: ${({ controls }) => or(controls, 'controls')}
+`;

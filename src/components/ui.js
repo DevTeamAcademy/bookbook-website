@@ -44,26 +44,12 @@ export const HeaderChangeLocaleWrapper = styled(Box)`
 
 // ///////////////////////////////////////////////////////////
 // Vidoe section
-export const OurDemo = styled(Flex)`
- display: flex;
- color: #FBFBFB;
- font-size: 48px;
- padding-top: 37px;
- text-align: center;
- align-items: center;
- flex-direction: column;
- background-color: #363135;
-
- ${createMaxWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
-    font-size: 28px;
+export const VideoWrapper = styled(Flex)`
+   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    font-size: 36px;
   }
-
- ${createMaxWithMediaQuery(GC.SECOND_UI_BREAKPOINT)} {
-    font-size: 18px;
-  }
-
 `;
-
+// TODO: Delete when Title component will be ready
 export const UnderLine = styled.div`
  width: 95px;
  height: 9px;
@@ -71,11 +57,6 @@ export const UnderLine = styled.div`
  border-radius: 20px;
  background-color: #9D8C70;
 `;
-
-export const OnlyVideoStyle = styled.div`
-padding: 30px 0;
-`;
-
 
 export const FooterWrapper = styled(Flex)`
   & > nav > a {

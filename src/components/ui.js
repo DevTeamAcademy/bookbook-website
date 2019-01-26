@@ -12,8 +12,7 @@ import {
   Input,
   TextArea,
   createMinWithMediaQuery,
-  createMaxWithMediaQuery,
-} from '../ui';
+  createMaxWithMediaQuery } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
 
 export const HeaderWrapper = styled(Flex)`
@@ -182,20 +181,12 @@ export const Line = styled.div`
   background-color: #f18701;
 `;
 
-export const FormContainer = styled.div`
-  display: flex;
-  margin-top: 22px;
-  align-items: center;
-  flex-direction: column;  
-`;
-
 export const FormInput = styled(Input)`
   border: 0;
   width: 262px;
   font-size: 12px;
   border-radius: 0;
   margin-bottom: 15px;
-  font-family: "Roboto";
   border-bottom: 1.5px solid #f18701; 
   border-color: ${({ invalid }) => invalid && 'red'};
 `;
@@ -221,54 +212,6 @@ export const FormTextArea = styled(TextArea)`
   font-size: 12px;
   font-family: "Roboto";
   border-bottom: 1.5px solid #f18701;
-`;
-
-export const ContactSection = styled(Flex)`
-  height: 205px;
-  position: relative;
-  background-color: #f1f1f1;
-`;
-
-export const ContactsInfo = styled.div`
-  font-size: 15px;
-  margin-top: 19px;
-  line-height: 1.5;
-  margin-left: 31px;
-  position: absolute;
-  font-family: "Roboto"; 
-`;
-
-export const FadeContainer = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0,0,0,0.3);
-`;
-
-export const Loader = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #f18701;
-  border-bottom: 8px solid #f18701;
-  animation: spin 2s linear infinite;
-  -webkit-animation: spin 2s linear infinite;
-  
-  @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-  }
-
-  @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 `;
 
 export const ResultWindow = styled.div`

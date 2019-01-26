@@ -6,8 +6,8 @@ const UA = {
   email: 'Емейл',
   home: 'Домашня',
   send: 'Надіслати',
-  yourName: 'Ім\'я',
-  details: 'Деталі',
+  name: 'Ім\'я',
+  message: 'Деталі',
   aboutUs: 'Про нас',
   contacts: 'Контакти',
   contactUs: 'Контакти',
@@ -48,7 +48,7 @@ const UA = {
   errorMessages: {
     phoneNumber: 'Номер невірний',
     email: 'Електронна адреса невірна',
-    yourName: 'Будь ласка, введіть існуюче ім`я',
+    name: 'Будь ласка, введіть існуюче ім`я',
   },
   actions: {
     openBookbook: 'Відкрити @bookbook',
@@ -59,8 +59,8 @@ const EN = {
   home: 'Home',
   send: 'Send',
   email: 'Email',
-  yourName: 'Name',
-  details: 'Details',
+  name: 'Name',
+  message: 'Details',
   aboutUs: 'About us',
   contacts: 'Contacts',
   contactUs: 'Contact Us',
@@ -99,7 +99,7 @@ const EN = {
   },
   errorMessages: {
     email: 'Please, enter a valid email',
-    yourName: 'Please, enter a valid name',
+    name: 'Please, enter a valid name',
     phoneNumber: 'Please, enter a valid phone number',
   },
   actions: {
@@ -111,8 +111,8 @@ const RU = {
   home: 'Home',
   send: 'Send',
   email: 'Email',
-  yourName: 'Name',
-  details: 'Details',
+  name: 'Name',
+  message: 'Details',
   aboutUs: 'About us',
   contacts: 'Contacts',
   contactUs: 'Contact Us',
@@ -151,7 +151,7 @@ const RU = {
   },
   errorMessages: {
     email: 'Please, enter a valid email RU',
-    yourName: 'Please, enter a valid name RU',
+    name: 'Please, enter a valid name RU',
     phoneNumber: 'Please, enter a valid phone number RU',
   },
   actions: {
@@ -163,8 +163,8 @@ const PL = {
   home: 'Home',
   send: 'Send',
   email: 'Email',
-  yourName: 'Name',
-  details: 'Details',
+  name: 'Name',
+  message: 'Details',
   aboutUs: 'About us',
   contacts: 'Contacts',
   contactUs: 'Contact Us',
@@ -203,7 +203,7 @@ const PL = {
   },
   errorMessages: {
     email: 'Please, enter a valid email PL',
-    yourName: 'Please, enter a valid name PL',
+    name: 'Please, enter a valid name PL',
     phoneNumber: 'Please, enter a valid phone number PL',
   },
   actions: {

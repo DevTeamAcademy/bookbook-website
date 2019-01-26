@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 import {
   compose,
   withState,
-  withHandlers,
-} from 'recompose';
+  withHandlers } from 'recompose';
 // components
+import Loader from './Loader';
 import { SectionTitle } from './SectionTitle';
 import ContactButtons from './ContactButtons';
 // global
@@ -13,23 +13,18 @@ import * as TC from '../constants/test-constants';
 // helpers
 import * as H from '../helpers';
 // ui
+import { Flex, Text, FadeContainer } from '../ui';
 import {
-  Loader,
   FormInput,
   ResultWindow,
   FormTextArea,
-  ContactsInfo,
-  FadeContainer,
-  FormContainer,
-  ContactSection,
-  FormFieldContainer,
-} from './ui';
+  FormFieldContainer } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const fields = [
   {
     type: 'text',
-    name: 'yourName',
+    name: 'name',
     component: (props) => <FormInput data-testid={TC.TEST_CONTACT_FORM_YOUR_NAME} {...props} />,
   },
   {
@@ -44,35 +39,36 @@ export const fields = [
   },
   {
     type: 'text',
-    name: 'details',
+    name: 'message',
     component: (props) => <FormTextArea data-testid={TC.TEST_CONTACT_FORM_DETAILS} {...props} />,
   },
 ];
 
 const initialFieldValues = {
+  name: '',
   email: '',
-  details: '',
-  yourName: '',
+  message: '',
   phoneNumber: '',
 };
 
 const initialErrors = {
+  name: false,
   email: false,
-  details: false,
-  yourName: false,
+  message: false,
   phoneNumber: false,
 };
 
 const getErrors = (values) => ({
-  details: false,
+  message: false,
   email: !GC.EMAIL_REGEX.test(values.email),
-  yourName: !GC.USER_NAME_REGEX.test(values.yourName),
+  name: !GC.USER_NAME_REGEX.test(values.name),
   phoneNumber: !GC.PHONE_NUMBER_REGEX.test(values.phoneNumber),
 });
 
+// TODO: with theme
 const enhance = compose(
   withState('errors', 'setErrors', initialErrors),
-  withState('fields', 'setFields', initialFieldValues),
+  withState('fields', 'setFields', { ...initialFieldValues }),
   withState('requestPending', 'setRequestPending', false),
   withState('showResultWindow', 'setShowResultWindow', false),
   withHandlers({
@@ -92,21 +88,24 @@ const enhance = compose(
       const invalid = Object.values(errors).some(err => err === true);
       if (invalid) return props.setErrors(errors);
       props.setRequestPending(true);
-      // Request:
       const Http = new XMLHttpRequest();
+      // TODO: clarify request data format
       const params = JSON.stringify({
-        title: props.fields.yourName, // Some random data
-        body: props.fields.email, // Some random data
-        userId: 1, // Some random data
+        title: props.fields.name,
+        body: props.fields.email,
+        userId: 1,
       });
       Http.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
       Http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
       Http.onreadystatechange = () => {
-        if (Http.readyState === 4 && Http.status === 201) { // Change to 200 someday or not.
-          // console.log(Http.responseText); // For demo purpose
+        if (Http.readyState === 4 && Http.status === 201) {
+          // TODO: Change to 200 someday or not.
+          props.setFields({ ...initialFieldValues });
           props.setRequestPending(false);
           props.setShowResultWindow(true);
-          setTimeout(() => { props.setShowResultWindow(false); }, 2000);
+          setTimeout(() => {
+            props.setShowResultWindow(false);
+          }, 2000);
         }
       };
       Http.send(params);
@@ -142,7 +141,7 @@ export const Contacts = (props) => (
     <SectionTitle
       titleText={H.getLocaleItem(['contactUs'], props.locale)}
     />
-    <FormContainer>
+    <Flex mt={22} alignItems='center' flexDirection='column'>
       {
         fields.map((field) => (
           <FormField
@@ -162,38 +161,45 @@ export const Contacts = (props) => (
         contactButtonText={H.getLocaleItem(['send'], props.locale)}
         attachButtonText={H.getLocaleItem(['attachFile'], props.locale)}
       />
-    </FormContainer>
+    </Flex>
     {
       props.allowContactSection
       && (
-      <ContactSection>
-        <ContactsInfo>
-          Email<br />bukbook.unity@gmail.com<br />
-          some.email@gmail.com<br /><br />
-          Phone numbers<br />
-          +380938135997<br />
-          +380987654321
-        </ContactsInfo>
-      </ContactSection>
+        <Flex
+          bg='#f1f1f1'
+          height={205}
+          position='relative'
+        >
+          <Text
+            mt={19}
+            ml={31}
+            fontSize={15}
+            lineHeight={1.5}
+          >
+            <Flex flexDirection='column'>
+              <Text>Email</Text>
+              <Text>bukbook.unity@gmail.com</Text>
+              <Text mb={12}>some.email@gmail.com</Text>
+              <Text>Phone numbers</Text>
+              <Text>+380938135997</Text>
+              <Text>+380987654321</Text>
+            </Flex>
+          </Text>
+        </Flex>
       )
     }
     {
-     props.requestPending
+      props.requestPending && <Loader />
+    }
+    {
+      props.showResultWindow
       && (
-      <FadeContainer>
-        <Loader />
-      </FadeContainer>
+        <FadeContainer>
+          <ResultWindow>
+            {H.getLocaleItem(['successMessages', 'contactDataSent'], props.locale)}
+          </ResultWindow>
+        </FadeContainer>
       )
-    }
-    {
-     props.showResultWindow
-     && (
-     <FadeContainer>
-       <ResultWindow>
-         {H.getLocaleItem(['successMessages', 'contactDataSent'], props.locale)}
-       </ResultWindow>
-     </FadeContainer>
-     )
     }
   </Fragment>
 );

@@ -13,7 +13,7 @@ import * as H from '../../helpers';
 import { Flex, Text, LinkButton, LinkButtonAnimated } from '../../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-// TODO: check and fix SplitText on change locale
+// TODO: fix SplitText on change locale
 
 const charPoses = {
   exit: { opacity: 0 },

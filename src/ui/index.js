@@ -118,7 +118,7 @@ export const Text = styled.div`
   ${lineHeight}
   ${fontWeight}
   ${letterSpacing}
-  cursor: ${({ cursor }) => or(cursor, 'initial')}
+  cursor: ${({ cursor }) => or(cursor, 'initial')};
 `;
 
 export const Button = styled.button`
@@ -133,7 +133,7 @@ export const Button = styled.button`
   ${boxShadow}
   ${borderColor}
   ${borderRadius}
-  cursor: ${({ cursor }) => or(cursor, 'initial')}
+  cursor: ${({ cursor }) => or(cursor, 'initial')};
 `;
 
 export const Input = styled.input`
@@ -159,7 +159,7 @@ export const LinkButton = styled.a`
   ${borderColor}
   ${borderRadius}
   ${justifyContent}
-  cursor: ${({ cursor }) => or(cursor, 'initial')}
+  cursor: ${({ cursor }) => or(cursor, 'initial')};
 `;
 
 /* NOTE: don't remove 'position' from start for work animation */

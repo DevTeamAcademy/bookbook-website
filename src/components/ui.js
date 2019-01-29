@@ -173,7 +173,6 @@ export const Title = styled(Flex)`
   font-weight: bold; 
   position: relative;
   align-items: center;
-  font-family:'Roboto';  /*TODO: connect this font*/
   flex-direction: column;
   justify-content: center;
 `;
@@ -216,7 +215,6 @@ export const FormTextArea = styled(TextArea)`
   resize: none;
   height: 133.5px;
   font-size: 12px;
-  font-family: "Roboto";
   border-bottom: 1.5px solid #f18701;
 `;
 

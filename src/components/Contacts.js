@@ -3,6 +3,8 @@ import {
   compose,
   withState,
   withHandlers } from 'recompose';
+import { withTheme } from 'styled-components';
+import { themeGet } from 'styled-system';
 // components
 import Loader from './Loader';
 import { SectionTitle } from './SectionTitle';
@@ -67,6 +69,7 @@ const getErrors = (values) => ({
 
 // TODO: with theme
 const enhance = compose(
+  withTheme,
   withState('errors', 'setErrors', initialErrors),
   withState('fields', 'setFields', { ...initialFieldValues }),
   withState('requestPending', 'setRequestPending', false),
@@ -166,9 +169,9 @@ export const Contacts = (props) => (
       props.allowContactSection
       && (
         <Flex
-          bg='#f1f1f1'
           height={205}
           position='relative'
+          bg={themeGet('colors.lightGrey', '#f1f1f1')((props))}
         >
           <Text
             mt={19}

@@ -67,7 +67,7 @@ export const HeaderNavigation = props => (
 
 export const BarContent = props => (
   <Flex
-    p={10}
+    p={20}
     flexDirection='column'
   >
     {
@@ -100,13 +100,13 @@ export const BarContent = props => (
 );
 
 export const BarNavigation = props => (
-  <Box position='relative'>
+  <Box zIndex='1' position='relative'>
     <BarNavigationWrapper
       width='100%'
       position='absolute'
       bg={themeGet('colors.lightGrey', 'grey')(props)}
       pose={H.ifElse(props.opened, 'opened', 'closed')}
-      border={`1px solid ${themeGet('colors.mainOrange', 'orange')(props)}`}
+      border={`1px solid ${themeGet('colors.middleGrey', 'orange')(props)}`}
     >
       <BarContent {...props} />
     </BarNavigationWrapper>

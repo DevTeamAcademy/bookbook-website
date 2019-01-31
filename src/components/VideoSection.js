@@ -3,7 +3,7 @@ import React from 'react';
 import { VideoWrapper, UnderLine } from './ui';
 // /////////////////////////////////////////////////////////////////
 import { Video } from '../ui/index';
-// TODO: use Title component when it will be ready
+// TODO: with theme and locale
 export const VideoSection = () => (
   <VideoWrapper
     pt='37px'

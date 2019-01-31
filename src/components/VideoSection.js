@@ -1,8 +1,10 @@
 import React from 'react';
 // components
 import { VideoWrapper, UnderLine } from './ui';
+// ui
+import { Video } from '../ui';
 // /////////////////////////////////////////////////////////////////
-import { Video } from '../ui/index';
+
 // TODO: with theme and locale
 export const VideoSection = () => (
   <VideoWrapper

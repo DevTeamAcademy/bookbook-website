@@ -6,7 +6,7 @@ import { withLocale } from '../../hocs';
 // page
 import HeadSection from './HeadSection';
 // video 
-import VideoSection from './VideoSection';
+import VideoSection from '../../components/VideoSection';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const MainPage = props => (

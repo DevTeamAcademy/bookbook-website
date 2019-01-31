@@ -1,9 +1,13 @@
 import React from 'react';
+import { equals } from 'ramda';
 import Link from 'next/link';
 import { themeGet } from 'styled-system';
 // components
 import { ChangeLocale } from './ChangeLocale';
-import { BarNavigationWrapper } from './ui';
+import {
+  BarNavigationWrapper,
+  BarNavigationItemWrapper,
+  HeaderNavigationItemWrapper } from './ui';
 // constants
 import * as GC from '../constants';
 // helpers
@@ -48,7 +52,13 @@ export const HeaderNavigation = props => (
           key={item.routePath}
           href={item.routePath}
         >
-          <a>{item.routeName}</a>
+          <a>
+            <HeaderNavigationItemWrapper
+              active={equals(H.getLocationPathname(), item.routePath)}
+            >
+              {item.routeName}
+            </HeaderNavigationItemWrapper>
+          </a>
         </Link>
       ))
     }
@@ -57,7 +67,7 @@ export const HeaderNavigation = props => (
 
 export const BarContent = props => (
   <Flex
-    p={10}
+    p={20}
     flexDirection='column'
   >
     {
@@ -67,7 +77,13 @@ export const BarContent = props => (
           key={item.routePath}
           href={item.routePath}
         >
-          <a>{item.routeName}</a>
+          <a>
+            <BarNavigationItemWrapper
+              active={equals(H.getLocationPathname(), item.routePath)}
+            >
+              {item.routeName}
+            </BarNavigationItemWrapper>
+          </a>
         </Link>
       ))
     }
@@ -84,13 +100,13 @@ export const BarContent = props => (
 );
 
 export const BarNavigation = props => (
-  <Box position='relative'>
+  <Box zIndex='1' position='relative'>
     <BarNavigationWrapper
       width='100%'
       position='absolute'
       bg={themeGet('colors.lightGrey', 'grey')(props)}
       pose={H.ifElse(props.opened, 'opened', 'closed')}
-      border={`1px solid ${themeGet('colors.mainOrange', 'orange')(props)}`}
+      border={`1px solid ${themeGet('colors.middleGrey', 'orange')(props)}`}
     >
       <BarContent {...props} />
     </BarNavigationWrapper>

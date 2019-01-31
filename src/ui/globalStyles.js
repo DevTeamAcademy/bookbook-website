@@ -5,6 +5,9 @@ export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
   body {
     font-family: 'Noto Sans';
+    a {
+      text-decoration: none;
+    }
   }
   * {
     border: 0;

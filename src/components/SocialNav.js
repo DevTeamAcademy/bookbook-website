@@ -25,17 +25,17 @@ export const SocialIcon = enhanceLabelIcon('#FBFBFB')((props) => (
 export const socialData = [
   {
     iconFunction: I.instagram,
-    key: {genShortId()},
+    key: genShortId(),
     link: '#',
   },
   {
     iconFunction: I.youTube,
-    key: {genShortId()},
+    key: genShortId(),
     link: '#',
   },
   {
     iconFunction: I.facebook,
-    key: {genShortId()},
+    key: genShortId(),
     link: '#',
   },
 ];

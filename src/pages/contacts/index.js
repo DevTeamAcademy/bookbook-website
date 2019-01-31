@@ -1,5 +1,6 @@
 import React from 'react';
 // components
+import Contacts from '../../components/Contacts';
 import PageHeader from '../../components/PageHeader';
 import PageLayout from '../../components/PageLayout';
 // helpers
@@ -8,10 +9,10 @@ import * as H from '../../helpers';
 import { withLocale } from '../../hocs';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const ContactPage = props => (
+export const ContactsPage = props => (
   <PageLayout locale={props.locale}>
-    <PageHeader text={H.getLocaleItem(['contacts'], props.locale)} />
+    <Contacts locale={props.locale} />
   </PageLayout>
 );
 
-export default withLocale(ContactPage);
+export default withLocale(ContactsPage);

@@ -4,12 +4,12 @@ import PageLayout from '../../components/PageLayout';
 // hocs
 import { withLocale } from '../../hocs';
 // page
-import MainSection from './MainSection';
+import HeadSection from './HeadSection';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const MainPage = props => (
   <PageLayout locale={props.locale}>
-    <MainSection locale={props.locale} />
+    <HeadSection locale={props.locale} />
   </PageLayout>
 );
 

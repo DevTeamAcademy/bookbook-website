@@ -46,13 +46,13 @@ export const Logo = () => (
 export const Header = props => (
   <header>
     <HeaderWrapper
-      zIndex='1'
+      zIndex='2'
       p='0px 10px'
       height='50px'
       position='sticky'
       alignItems='center'
-      bg={themeGet('colors.lightBlack', 'white')(props)}
-      borderBottom={`1px solid ${themeGet('colors.white', 'white')(props)}`}
+      bg={themeGet('colors.darkGrey', 'white')(props)}
+      borderBottom={`1px solid ${themeGet('colors.middleGrey', 'white')(props)}`}
     >
       <Logo {...props} />
       <HeaderNavigation {...props} />

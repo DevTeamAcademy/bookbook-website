@@ -4,11 +4,11 @@ import { withTheme } from 'styled-components';
 import { themeGet } from 'styled-system';
 // components
 import SocialNav from './SocialNav';
-import { FooterWrapper, FooterSection, FooterLink, FooterNav } from './ui';
+import { FooterSection, FooterLink, FooterNav } from './ui';
 // helpers
 import * as H from '../helpers';
 // ui
-import { Text } from '../ui';
+import { Text, Flex } from '../ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 // TODO: With theme
 export const FooterNavigation = ({ locale }) => (
@@ -24,7 +24,7 @@ export const FooterNavigation = ({ locale }) => (
 
 export const Footer = props => (
   <footer>
-    <FooterWrapper
+    <Flex
       p={15}
       fontSize={24}
       alignItems='center'
@@ -50,7 +50,7 @@ export const Footer = props => (
       >
         {H.getLocaleItem(['copyright'], props.locale)}
       </Text>
-    </FooterWrapper>
+    </Flex>
   </footer>
 );
 

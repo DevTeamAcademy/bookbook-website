@@ -93,7 +93,6 @@ export const Grid = styled.div`
   ${border}
   ${zIndex}
   ${fontSize}
-  ${flexWrap}
   ${position}
   ${boxShadow}
   ${textAlign}
@@ -104,7 +103,6 @@ export const Grid = styled.div`
   ${borderColor}
   ${borderBottom}
   ${borderRadius}
-  ${flexDirection}
   ${justifyContent}
   ${gridTemplateColumns}
   display: grid;

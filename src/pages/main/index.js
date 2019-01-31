@@ -5,11 +5,14 @@ import PageLayout from '../../components/PageLayout';
 import { withLocale } from '../../hocs';
 // page
 import HeadSection from './HeadSection';
+// video 
+import VideoSection from './VideoSection';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const MainPage = props => (
   <PageLayout locale={props.locale}>
     <HeadSection locale={props.locale} />
+    <VideoSection {...props} />
   </PageLayout>
 );
 

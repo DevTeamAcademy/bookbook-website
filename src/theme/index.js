@@ -4,11 +4,8 @@ export default {
   colors: {
     white: '#FFFFFF',
     black: '#000000',
-<<<<<<< HEAD
     mainBlack: '#363135',
-=======
     mainWhite: '#FBFBFB',
->>>>>>> 87c24161fc790c72dcc021a60594323ef56ab5cc
     lightBlack: '#101111',
     lightGrey: '#4A4549',
     middleGrey: '#9D8C70',

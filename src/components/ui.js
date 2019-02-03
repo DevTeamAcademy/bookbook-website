@@ -41,14 +41,6 @@ export const HeaderChangeLocaleWrapper = styled(Box)`
   }
 `;
 
-export const FooterWrapper = styled(Flex)`
-  & > nav > a {
-    padding: 0px 20px;
-    text-decoration: none;
-    color: ${themeGet('colors.mainOrange', 'white')}; 
-  }
-`;
-
 export const HamburgerBtnWrapper = styled('div')`
   width: 40px;
   height: 25px;
@@ -90,6 +82,37 @@ export const HamburgerBtnWrapper = styled('div')`
     top: ${({ opened }) => ifElse(opened, '10px', '20px')};
     transform: ${({ opened }) => ifElse(opened, 'rotate(-135deg)', 'rotate(0deg)')};
   }
+`;
+
+export const FooterLink = styled(Box)`
+  &:hover {
+    color: #FBFBFB;
+    cursor: pointer;
+  }
+`;
+
+export const SocialIconElement = styled.a`
+  margin: 0 10px;
+`;
+
+export const SocialsWrapper = styled.nav`
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+
+export const FooterSection = styled(Flex)`
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+  }
+`;
+
+export const FooterNav = styled(Box)`
+  padding-top: 15px;
+  text-align: center;
 `;
 
 export const BarNavigationWrapper = posed(styled(Box)`

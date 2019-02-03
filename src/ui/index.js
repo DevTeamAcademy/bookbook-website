@@ -36,7 +36,8 @@ import {
   borderRadius,
   letterSpacing,
   flexDirection,
-  justifyContent } from 'styled-system';
+  justifyContent,
+  gridTemplateColumns } from 'styled-system';
 // helpers
 import * as H from '../helpers';
 // //////////////////////////////////////////////////////////////////////////////
@@ -78,6 +79,33 @@ export const Box = styled.div`
   ${borderColor}
   ${borderBottom}
   ${borderRadius}
+`;
+
+export const Grid = styled.div`
+  ${top}
+  ${left}
+  ${color}
+  ${space}
+  ${width}
+  ${right}
+  ${height}
+  ${bottom}
+  ${border}
+  ${zIndex}
+  ${fontSize}
+  ${position}
+  ${boxShadow}
+  ${textAlign}
+  ${borderTop}
+  ${borderLeft}
+  ${alignItems}
+  ${borderRight}
+  ${borderColor}
+  ${borderBottom}
+  ${borderRadius}
+  ${justifyContent}
+  ${gridTemplateColumns}
+  display: grid;
 `;
 
 export const Flex = styled.div`

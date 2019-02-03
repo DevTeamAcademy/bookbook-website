@@ -21,6 +21,7 @@
     "react-pose": "^4.0.4",
     "react-pose-text": "^3.1.0",
     "recompose": "^0.30.0",
+    "shortid": "^2.2.14",
     "styled-components": "^4.1.2",
     "styled-system": "^3.1.11"
   },

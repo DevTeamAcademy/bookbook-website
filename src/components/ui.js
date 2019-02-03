@@ -108,6 +108,37 @@ export const HamburgerBtnWrapper = styled('div')`
   }
 `;
 
+export const FooterLink = styled(Box)`
+  &:hover {
+    color: #FBFBFB;
+    cursor: pointer;
+  }
+`;
+
+export const SocialIconElement = styled.a`
+  margin: 0 10px;
+`;
+
+export const SocialsWrapper = styled.nav`
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+
+export const FooterSection = styled(Flex)`
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+  }
+`;
+
+export const FooterNav = styled(Box)`
+  padding-top: 15px;
+  text-align: center;
+`;
+
 export const BarNavigationWrapper = posed(styled(Box)`
   opacity: 0;
   display: none;

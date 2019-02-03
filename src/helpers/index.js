@@ -7,6 +7,7 @@ import {
   pathOr,
   isEmpty,
   complement } from 'ramda';
+import shortid from 'shortid';
 // constants
 import * as GC from '../constants';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,6 +33,10 @@ export const ifElse = (predicate, ifSt, elseSt) => {
 
 export const getLocaleItem = (path, locale) => pathOr('', path, locale);
 
+// SHORT ID GENERATOR
+export const genShortId = () => (
+  shortid.generate()
+);
 // TODO: remove it if below solution works properly
 // export const isBrowser = new Function('try {return this===window;}catch(e){ return false;}'); // eslint-disable-line
 

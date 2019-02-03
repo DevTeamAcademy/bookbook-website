@@ -70,6 +70,7 @@ export const Box = styled.div`
   ${position}
   ${maxWidth}
   ${minWidth}
+  ${textAlign}
   ${maxHeight}
   ${minHeight}
   ${boxShadow}

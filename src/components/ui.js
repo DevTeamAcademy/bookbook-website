@@ -190,12 +190,12 @@ export const BarNavigationItemWrapper = posed(styled('div')`
 export const WrapperForDisplay = styled.div`
   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     display: grid;
-    background-size: auto;
     grid-template-columns: 1fr 1fr;
   }
 `;
 
 export const RightBg = styled.div`
-  background: rgba(0, 0, 0, .65) url(./static/main-library-picture.png);
+  background: rgba(54, 49, 53, 0.85) url(./static/main-library-picture.png);
   background-blend-mode: darken;
+  background-size: cover;
 `;

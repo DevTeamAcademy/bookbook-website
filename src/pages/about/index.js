@@ -51,9 +51,10 @@ export const AboutUsWrapper = () => (
       width='200px'
       height='40px'
       color='#FBFBFB'
+      fontSize='24px'
       textAlign='center'
-      alignItems='center'
-    > Contact
+      borderRadius='5px'
+    > Contact!
     </FooterLink>
   </Flex>
   <RightBg />
@@ -62,7 +63,7 @@ export const AboutUsWrapper = () => (
 export const AboutPage = props => (
   <PageLayout locale={props.locale}>
   {/* <PageHeader text={H.getLocaleItem(['aboutUs'], props.locale)} /> */}
-    <AboutUsWrapper></AboutUsWrapper>
+    <AboutUsWrapper />
   </PageLayout>
 );
 

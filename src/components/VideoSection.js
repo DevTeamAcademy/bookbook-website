@@ -30,8 +30,8 @@ export const VideoSection = () => (
       <source src='./static/video.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
       <track
         default
-        kind='captions'
         srcLang='en'
+        kind='captions'
       />
     </Video>
   </VideoWrapper>

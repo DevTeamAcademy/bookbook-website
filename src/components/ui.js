@@ -44,25 +44,17 @@ export const HeaderChangeLocaleWrapper = styled(Box)`
 // ///////////////////////////////////////////////////////////
 // Vidoe section
 export const VideoWrapper = styled(Flex)`
-   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     font-size: 36px;
   }
 `;
 // TODO: Delete when Title component will be ready
 export const UnderLine = styled.div`
- width: 95px;
- height: 9px;
- margin: 10px 0;
- border-radius: 20px;
- background-color: #9D8C70;
-`;
-
-export const FooterWrapper = styled(Flex)`
-  & > nav > a {
-    padding: 0px 20px;
-    text-decoration: none;
-    color: ${themeGet('colors.mainOrange', 'white')}; 
-  }
+  width: 95px;
+  height: 9px;
+  margin: 10px 0;
+  border-radius: 20px;
+  background-color: #9D8C70;
 `;
 
 export const HamburgerBtnWrapper = styled('div')`

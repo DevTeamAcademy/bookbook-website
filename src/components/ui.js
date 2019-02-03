@@ -185,3 +185,17 @@ export const BarNavigationItemWrapper = posed(styled('div')`
   opened: { opacity: 1 },
   closed: { opacity: 0 },
 });
+
+// wrapper for display over 1200px
+export const WrapperForDisplay = styled.div`
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    display: grid;
+    background-size: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const RightBg = styled.div`
+  background: rgba(0, 0, 0, .65) url(./static/main-library-picture.png);
+  background-blend-mode: darken;
+`;

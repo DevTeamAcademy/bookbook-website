@@ -2,6 +2,7 @@ import React from 'react';
 // components
 import PageHeader from '../../components/PageHeader';
 import PageLayout from '../../components/PageLayout';
+import { WrapperForDisplay, RightBg } from '../../components/ui';
 //bottom
 import  { FooterLink } from '../../components/ui';
 import { Flex, Text } from '../../ui/index';
@@ -11,10 +12,12 @@ import * as H from '../../helpers';
 import { withLocale } from '../../hocs';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 export const AboutUsWrapper = () => (
+  <WrapperForDisplay>
   <Flex 
     px='45px'
     bg='#4A4549'
     height='100%'
+   
     alignItems='center'
     flexDirection='column'
     justifyContent='center'
@@ -30,6 +33,7 @@ export const AboutUsWrapper = () => (
     <Text
       color='#FBFBFB'
       fontSize='22px'
+      maxWidth='500px'
     >   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididunt ut labore et dolore magna 
       aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
@@ -49,17 +53,17 @@ export const AboutUsWrapper = () => (
       color='#FBFBFB'
       textAlign='center'
       alignItems='center'
-    > @bookbook
+    > Contact
     </FooterLink>
   </Flex>
+  <RightBg />
+  </WrapperForDisplay>
 );
 export const AboutPage = props => (
   <PageLayout locale={props.locale}>
-    <PageHeader text={H.getLocaleItem(['aboutUs'], props.locale)} />
+  {/* <PageHeader text={H.getLocaleItem(['aboutUs'], props.locale)} /> */}
     <AboutUsWrapper></AboutUsWrapper>
   </PageLayout>
 );
-
-
 
 export default withLocale(AboutPage);

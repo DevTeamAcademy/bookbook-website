@@ -141,6 +141,7 @@ export const Text = styled.div`
   ${space}
   ${width}
   ${opacity}
+  ${maxWidth}
   ${fontSize}
   ${textAlign}
   ${lineHeight}

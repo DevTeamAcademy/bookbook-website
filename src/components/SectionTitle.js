@@ -4,7 +4,9 @@ import { Line, Title } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const SectionTitle = (props) => (
-  <Title>
+  <Title
+    bg='#4A4549'
+  >
     {props.titleText}
     <Line />
   </Title>

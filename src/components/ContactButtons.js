@@ -43,9 +43,9 @@ export const ContactButtons = (props) => (
     }
     <Button
       ml={23}
-      width={108}
+      width='64%'
       height={35}
-      bg='#f18701'
+      bg='#9D8C70'
       fontSize={18}
       color='#ffffff'
       cursor='pointer'

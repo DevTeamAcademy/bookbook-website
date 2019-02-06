@@ -20,7 +20,10 @@ import {
   FormInput,
   ResultWindow,
   FormTextArea,
+  FormContainer,
   FormFieldContainer } from './ui';
+import { TwoGuys } from './icons';
+
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const fields = [
@@ -144,7 +147,7 @@ export const Contacts = (props) => (
     <SectionTitle
       titleText={H.getLocaleItem(['contactUs'], props.locale)}
     />
-    <Flex mt={22} alignItems='center' flexDirection='column'>
+    <FormContainer>
       {
         fields.map((field) => (
           <FormField
@@ -158,6 +161,12 @@ export const Contacts = (props) => (
           />
         ))
       }
+      <TwoGuys />
+    </FormContainer>
+    <Flex
+      justifyContent='center'
+      bg={themeGet('colors.lightGrey', 'grey')((props))}
+    >
       <ContactButtons
         onSubmit={props.handleSubmit}
         allowAttachButton={props.allowAttachButton}
@@ -171,13 +180,14 @@ export const Contacts = (props) => (
         <Flex
           height={205}
           position='relative'
-          bg={themeGet('colors.lightGrey', '#f1f1f1')((props))}
+          bg={themeGet('colors.darkGrey', '#f1f1f1')((props))}
         >
           <Text
             mt={19}
             ml={31}
             fontSize={15}
             lineHeight={1.5}
+            color={themeGet('colors.mainWhite', 'white')((props))}
           >
             <Flex flexDirection='column'>
               <Text>Email</Text>

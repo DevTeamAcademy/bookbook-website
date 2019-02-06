@@ -167,8 +167,8 @@ export const BarNavigationItemWrapper = posed(styled('div')`
 
 // Contacts form styles
 export const Title = styled(Flex)`
-  height:55px;
-  color: #1e1b18;  
+  height: 55px;
+  color: #FBFBFB;  
   font-size: 24px;
   font-weight: bold; 
   position: relative;
@@ -183,17 +183,60 @@ export const Line = styled.div`
   height: 4.5px; 
   position: absolute; 
   border-radius: 10px; 
-  background-color: #f18701;
+  background-color: #9D8C70;
 `;
 
 export const FormInput = styled(Input)`
   border: 0;
-  width: 262px;
+  width: 100%;  
+  color: #FBFBFB;
   font-size: 12px;
+  background: none;
   border-radius: 0;
   margin-bottom: 15px;
-  border-bottom: 1.5px solid #f18701; 
+  border-bottom: 1.5px solid #9D8C70; 
   border-color: ${({ invalid }) => invalid && 'red'};
+`;
+
+export const FormContainer = styled(Flex)`
+  height: 350px;
+  position: relative;
+  align-items: center;
+  padding: 70px 8% 0 8%;
+  flex-direction: column;
+  background-color: ${themeGet('colors.lightGrey', 'grey')}; 
+  
+  & > div {
+    width: 70%;
+  }
+
+  & svg[name="two-guys-svg"] {
+    display: none;
+  }
+
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+    & svg[name="two-guys-svg"] {
+      bottom: 30px;
+      display: block;
+      position: absolute;
+      right: calc(25% - 45px);
+    }
+
+    & div:not(:nth-child(4)) {
+      width: 25%;
+    }
+
+    & div:nth-child(4) {
+      left: 12%;
+      width: 39%;
+      bottom: 50px;
+      position: absolute;
+    }
+  }
 `;
 
 export const FormFieldContainer = styled.div`
@@ -211,11 +254,13 @@ export const FormFieldContainer = styled.div`
 `;
 
 export const FormTextArea = styled(TextArea)`
-  width: 262px;
+  width: 100%;
   resize: none;
+  color: #FBFBFB;
   height: 133.5px;
   font-size: 12px;
-  border-bottom: 1.5px solid #f18701;
+  background: none;
+  border-bottom: 1.5px solid #9D8C70;
 `;
 
 export const ResultWindow = styled.div`

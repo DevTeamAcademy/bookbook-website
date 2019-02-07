@@ -12,7 +12,7 @@ import { withLocale } from '../../hocs';
 // page about
 import { WrapperForDisplay, RightBg } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
-export const AboutUsWrapper = () => (
+export const AboutUsWrapper = (props) => (
   <WrapperForDisplay>
     <Flex 
       px='45px'

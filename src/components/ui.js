@@ -9,6 +9,8 @@ import { ifElse } from '../helpers';
 import {
   Box,
   Flex,
+  Input,
+  TextArea,
   createMinWithMediaQuery,
   createMaxWithMediaQuery } from '../ui';
 // //////////////////////////////////////////////////////////////////////////////
@@ -133,8 +135,8 @@ export const BarNavigationWrapper = posed(styled(Box)`
   }
 `)({
   opened: {
-    opacity: 1,
     y: '0px',
+    opacity: 1,
     staggerChildren: 100,
   },
   closed: {
@@ -185,3 +187,114 @@ export const BarNavigationItemWrapper = posed(styled('div')`
   opened: { opacity: 1 },
   closed: { opacity: 0 },
 });
+
+// Contacts form styles
+export const Title = styled(Flex)`
+  height: 55px;
+  color: #FBFBFB;  
+  font-size: 24px;
+  font-weight: bold; 
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const Line = styled.div`
+  bottom: 0; 
+  width: 47.5px; 
+  height: 4.5px; 
+  position: absolute; 
+  border-radius: 10px; 
+  background-color: #9D8C70;
+`;
+
+export const FormInput = styled(Input)`
+  border: 0;
+  width: 100%;  
+  color: #FBFBFB;
+  font-size: 12px;
+  background: none;
+  border-radius: 0;
+  margin-bottom: 15px;
+  border-bottom: 1.5px solid #9D8C70; 
+  border-color: ${({ invalid }) => invalid && 'red'};
+`;
+
+export const FormContainer = styled(Flex)`
+  height: 350px;
+  position: relative;
+  align-items: center;
+  padding: 70px 8% 0 8%;
+  flex-direction: column;
+  background-color: ${themeGet('colors.lightGrey', 'grey')}; 
+  
+  & > div {
+    width: 70%;
+  }
+
+  & svg[name="two-guys-svg"] {
+    display: none;
+  }
+
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+    & svg[name="two-guys-svg"] {
+      bottom: 30px;
+      display: block;
+      position: absolute;
+      right: calc(25% - 45px);
+    }
+
+    & div:not(:nth-child(4)) {
+      width: 25%;
+    }
+
+    & div:nth-child(4) {
+      left: 12%;
+      width: 39%;
+      bottom: 50px;
+      position: absolute;
+    }
+  }
+`;
+
+export const FormFieldContainer = styled.div`
+  position: relative;
+
+  &::after {
+    left: 0;
+    top: 22px;
+    color: red;
+    font-size: 10px;
+    position: absolute;
+    white-space: nowrap;
+    content: '${({ text }) => text}';
+  }
+`;
+
+export const FormTextArea = styled(TextArea)`
+  width: 100%;
+  resize: none;
+  color: #FBFBFB;
+  height: 133.5px;
+  font-size: 12px;
+  background: none;
+  border-bottom: 1.5px solid #9D8C70;
+`;
+
+export const ResultWindow = styled.div`
+  color: green;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: calc(50% - 100px);
+  left: calc(50% - 150px);
+  justify-content: center;
+  background-color: rgba(250, 250, 250, 0.8);
+`;

@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 // ui
-import { Text } from '../ui';
+import { Line, Title } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const SectionTitle = (props) => (
-  <Fragment>
-    <Text>{props.titleText}</Text>
-  </Fragment>
+  <Title
+    bg='#4A4549'
+  >
+    {props.titleText}
+    <Line />
+  </Title>
 );
 
 export default SectionTitle;

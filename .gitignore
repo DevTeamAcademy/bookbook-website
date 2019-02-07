@@ -5,3 +5,5 @@ build
 out
 *.log
 .eslintcache
+__snapshots__/
+package-lock.json

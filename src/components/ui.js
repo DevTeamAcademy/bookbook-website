@@ -167,42 +167,41 @@ export const BarNavigationItemWrapper = posed(styled('div')`
 
 // Contacts form styles
 export const Title = styled(Flex)`
-  height: 55px;
-  color: #FBFBFB;  
-  font-size: 24px;
+  font-size: 48px;
   font-weight: bold; 
   position: relative;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  color: ${themeGet('colors.mainWhite', 'white')}; 
 `;
 
 export const Line = styled.div`
   bottom: 0; 
-  width: 47.5px; 
-  height: 4.5px; 
+  width: 95px; 
+  height: 9px; 
   position: absolute; 
-  border-radius: 10px; 
-  background-color: #9D8C70;
+  border-radius: 20px; 
+  background-color: ${themeGet('colors.middleGrey', 'grey')};
 `;
 
 export const FormInput = styled(Input)`
   border: 0;
   width: 100%;  
-  color: #FBFBFB;
-  font-size: 12px;
+  font-size: 24px;
   background: none;
   border-radius: 0;
   margin-bottom: 15px;
-  border-bottom: 1.5px solid #9D8C70; 
-  border-color: ${({ invalid }) => invalid && 'red'};
+  color: ${themeGet('colors.mainWhite', 'white')};
+  border-color: ${({ invalid }) => invalid && 'red'}; // TODO change to themeGet...
+  border-bottom: 2px solid ${themeGet('colors.middleGrey', 'grey')}; 
 `;
 
 export const FormContainer = styled(Flex)`
-  height: 350px;
+  height: 650px;
   position: relative;
   align-items: center;
-  padding: 70px 8% 0 8%;
+  padding: 80px 8% 0 8%;
   flex-direction: column;
   background-color: ${themeGet('colors.lightGrey', 'grey')}; 
   
@@ -220,7 +219,8 @@ export const FormContainer = styled(Flex)`
     justify-content: space-around;
     
     & svg[name="two-guys-svg"] {
-      bottom: 30px;
+      width: 194px;
+      bottom: 150px;
       display: block;
       position: absolute;
       right: calc(25% - 45px);
@@ -232,8 +232,8 @@ export const FormContainer = styled(Flex)`
 
     & div:nth-child(4) {
       left: 12%;
-      width: 39%;
-      bottom: 50px;
+      width: 38%;
+      bottom: 140px;
       position: absolute;
     }
   }
@@ -244,9 +244,9 @@ export const FormFieldContainer = styled.div`
 
   &::after {
     left: 0;
-    top: 22px;
-    color: red;
-    font-size: 10px;
+    top: 35px;
+    color: red; // TODO change to themeGet...
+    font-size: 16px;
     position: absolute;
     white-space: nowrap;
     content: '${({ text }) => text}';
@@ -256,15 +256,15 @@ export const FormFieldContainer = styled.div`
 export const FormTextArea = styled(TextArea)`
   width: 100%;
   resize: none;
-  color: #FBFBFB;
-  height: 133.5px;
-  font-size: 12px;
+  height: 134px;
+  font-size: 26px;
   background: none;
-  border-bottom: 1.5px solid #9D8C70;
+  color: ${themeGet('colors.mainWhite', 'white')};
+  border-bottom: 2px solid ${themeGet('colors.middleGrey', 'grey')};
 `;
 
 export const ResultWindow = styled.div`
-  color: green;
+  color: green; // TODO change to themeGet...
   width: 300px;
   height: 200px;
   display: flex;

@@ -4,35 +4,45 @@ import { themeGet } from 'styled-system';
 // hocs
 import {
   withChangeLocale,
-  withHoveredStatus } from '../hocs';
+  withHoveredStatus
+} from '../hocs';
 // ui
 import { Box, Flex, Text, Image } from '../ui';
+import { TextLocale, LocalCompDisplay } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const ChangeLocalePopover = withChangeLocale(props => (
-  <Flex
-    p='5px'
-    border='1px solid'
-    borderRadius='3px'
-    position='absolute'
-    flexDirection='column'
-    top={or(props.popperTop, '20px')}
-    right={or(props.popperRight, '0px')}
-    bg={themeGet('colors.lightGrey', 'grey')(props)}
-    borderColor={themeGet('colors.mainOrange', 'orange')(props)}
-  >
-    {props.locale.languages.map((item) => (
-      <Text
-        m='5px'
-        cursor='pointer'
-        key={item.localeName}
-        onClick={() => props.changeLocale(item.localeName)}
-        color={themeGet('colors.mainOrange', 'orange')(props)}
-      >
-        {item.value}
-      </Text>
-    ))}
-  </Flex>
+  <LocalCompDisplay>
+    <Flex
+      p='5px'
+      // border='1px solid #9D8C70'
+      borderRadius='0px'
+      position='absolute'
+      flexDirection='column'
+      top={or(props.popperTop, '20px')}
+      right={or(props.popperRight, '0px')}
+      bg={themeGet('colors.lightGrey', '#292929')(props)}
+    // borderColor={themeGet('colors.mainOrange', '#9D8C70')(props)}
+    >
+      {props.hovered && props.locale.languages.map((item) => (
+        <Text
+          width='180px'
+          m='5px'
+          cursor='pointer'
+          key={item.localeName}
+          hover='red'
+          onClick={() => props.changeLocale(item.localeName)}
+          color={themeGet('colors.mainOrange', '#9D8C70')(props)}
+         >
+          {item.value}
+        </Text>
+      ))}
+
+    </Flex>
+    <TextLocale
+    >Languages
+    </TextLocale>
+  </LocalCompDisplay>
 ));
 
 export const ChangeLocale = withHoveredStatus(props => (
@@ -48,9 +58,11 @@ export const ChangeLocale = withHoveredStatus(props => (
     >
       <Image src='../../static/language-icon.svg' alt='language' />
       <Image src='../../static/arrow-down-icon.svg' alt='language' />
-      {
-        props.hovered && <ChangeLocalePopover {...props} />
-      }
+
+      <ChangeLocalePopover {...props} />
+
     </Flex>
   </Box>
 ));
+
+

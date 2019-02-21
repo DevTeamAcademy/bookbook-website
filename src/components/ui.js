@@ -8,6 +8,7 @@ import { ifElse } from '../helpers';
 // ui
 import {
   Box,
+  Text,
   Flex,
   Input,
   TextArea,
@@ -297,4 +298,30 @@ export const ResultWindow = styled.div`
   left: calc(50% - 150px);
   justify-content: center;
   background-color: rgba(250, 250, 250, 0.8);
+`;
+
+export const TextLocale = styled(Box)`
+  width: auto;
+  color: #FDE3A7;
+  cursor: pointer;
+  position: relative;
+  margin: 0 -20px 0 10px;
+  border-bottom: 1.5px solid #9D8C70;
+  
+    &::after {
+      width: 0;
+      height: 0;
+      content: '';
+      position: absolute;
+      border-style: solid;
+      margin: 9px 0 0 30px;
+      border-width: 8px 7.5px 0 7.5px;
+      border-color: #FDE3A7 transparent transparent transparent;
+    }
+`;
+
+export const LocalCompDisplay = styled.div`
+  ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
+    margin-right: 100px;
+  }
 `;

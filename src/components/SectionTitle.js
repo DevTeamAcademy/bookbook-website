@@ -14,7 +14,7 @@ export const SectionTitle = withTheme((props) => (
     {props.titleText}
     <Line />
   </Title>
-  )
+),
 );
 
 export default SectionTitle;

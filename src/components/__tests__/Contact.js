@@ -1,7 +1,6 @@
 import 'react-testing-library/cleanup-after-each';
 import React from 'react';
 import { render, cleanup, fireEvent } from 'react-testing-library';
-import { shallow } from 'enzyme';
 // global
 import {
   TEST_CONTACT_FORM_EMAIL,
@@ -13,14 +12,6 @@ import {
 import Contacts from '../Contacts';
 
 afterEach(cleanup);
-
-describe('Contacts', () => {
-  it('should render correctly in "debug" mode', () => {
-    const component = shallow(<Contacts debug />);
-
-    expect(component).toMatchSnapshot();
-  });
-});
 
 it('Should set the your name input value to entered value', () => {
   const { getByTestId } = render(<Contacts />);

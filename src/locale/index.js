@@ -8,6 +8,7 @@ const UA = {
   contacts: 'контакти',
   termsAndConditions: 'умови використання',
   privacyPolicy: 'політика приватності',
+  textPrivacy: 'приклад. По прошению вольноприходящего ученика Академии Тараса Шевченко (по входящей книге № 386). Определено: Поелику Шевченко известен Совету по своим работам и награжден уже за успехи в живописи серебряною медалью 2-го достоинства, то удостоить его звания неклассного художника и представить на утверждение общему собранию Академии',
   copyright: '2018 © Всі права захищено',
   languages: [
     {
@@ -46,6 +47,7 @@ const EN = {
   contacts: 'contacts',
   termsAndConditions: 'terms and conditions',
   privacyPolicy: 'privacy policy',
+  textPrivacy: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   copyright: '2018 © All rights reserved',
   languages: [
     {

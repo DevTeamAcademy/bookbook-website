@@ -125,6 +125,7 @@ export const Flex = styled.div`
   ${position}
   ${boxShadow}
   ${borderTop}
+  ${textAlign}
   ${borderLeft}
   ${alignItems}
   ${borderRight}
@@ -142,6 +143,7 @@ export const Text = styled.div`
   ${width}
   ${opacity}
   ${fontSize}
+  ${maxWidth}
   ${textAlign}
   ${lineHeight}
   ${fontWeight}

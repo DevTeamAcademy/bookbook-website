@@ -305,9 +305,9 @@ export const TextLocale = styled(Box)`
   color: #FDE3A7;
   cursor: pointer;
   position: relative;
-  margin: 0 -20px 0 10px;
+  margin: 0 -20px 0 5px;
   border-bottom: 1.5px solid #9D8C70;
-  
+    
     &::after {
       width: 0;
       height: 0;
@@ -324,4 +324,10 @@ export const LocalCompDisplay = styled.div`
   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
     margin-right: 100px;
   }
+`;
+
+export const TextLocaleCompomemt = styled(Text)`
+  &:hover {
+    color: white;
+  };
 `;

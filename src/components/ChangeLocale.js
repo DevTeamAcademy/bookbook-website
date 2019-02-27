@@ -8,13 +8,12 @@ import {
 } from '../hocs';
 // ui
 import { Box, Flex, Text, Image } from '../ui';
-import { TextLocale, LocalCompDisplay } from './ui';
+import { TextLocale, LocalCompDisplay, TextLocaleCompomemt } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const ChangeLocalePopover = withChangeLocale(props => (
   <LocalCompDisplay>
     <Flex
-      p='5px'
       // border='1px solid #9D8C70'
       borderRadius='0px'
       position='absolute'
@@ -25,22 +24,21 @@ export const ChangeLocalePopover = withChangeLocale(props => (
     // borderColor={themeGet('colors.mainOrange', '#9D8C70')(props)}
     >
       {props.hovered && props.locale.languages.map((item) => (
-        <Text
-          width='180px'
+        <TextLocaleCompomemt
           m='5px'
+          width='170px'
           cursor='pointer'
           key={item.localeName}
-          hover='red'
           onClick={() => props.changeLocale(item.localeName)}
           color={themeGet('colors.mainOrange', '#9D8C70')(props)}
          >
           {item.value}
-        </Text>
+        </TextLocaleCompomemt>
       ))}
 
     </Flex>
     <TextLocale
-    >Languages
+      > name name
     </TextLocale>
   </LocalCompDisplay>
 ));

@@ -149,10 +149,7 @@ export const Text = styled.div`
   ${fontWeight}
   ${letterSpacing}
   cursor: ${({ cursor }) => or(cursor, 'initial')};
-  &:hover {
-    color: ${({colorHover}) => (colorHover, 'blue' )}
-  };
-`;
+ `;
 
 export const Button = styled.button`
   ${color}

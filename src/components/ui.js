@@ -301,20 +301,21 @@ export const ResultWindow = styled.div`
 `;
 
 export const TextLocale = styled(Box)`
-  width: auto;
+  width: 140px;
   color: #FDE3A7;
   cursor: pointer;
+  margin-left: 15px; 
   position: relative;
-  margin: 0 -20px 0 5px;
   border-bottom: 1.5px solid #9D8C70;
     
     &::after {
       width: 0;
+      top: 9px;
       height: 0;
+      right: 0px;
       content: '';
       position: absolute;
       border-style: solid;
-      margin: 9px 0 0 30px;
       border-width: 8px 7.5px 0 7.5px;
       border-color: #FDE3A7 transparent transparent transparent;
     }
@@ -322,7 +323,7 @@ export const TextLocale = styled(Box)`
 
 export const LocalCompDisplay = styled.div`
   ${createMinWithMediaQuery(GC.FIRST_UI_BREAKPOINT)} {
-    margin-right: 100px;
+    margin-right: 20px;
   }
 `;
 

@@ -3,30 +3,35 @@ import { or } from 'ramda';
 import { themeGet } from 'styled-system';
 // hocs
 import {
+  withLocale,
   withChangeLocale,
   withHoveredStatus
 } from '../hocs';
+//helpers
+import * as H from '../helpers';
 // ui
 import { Box, Flex, Text, Image } from '../ui';
 import { TextLocale, LocalCompDisplay, TextLocaleCompomemt } from './ui';
 //  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-export const ChangeLocalePopover = withChangeLocale(props => (
+export const ChangeLocalePopover = withLocale(withChangeLocale(props => (
   <LocalCompDisplay>
     <Flex
       // border='1px solid #9D8C70'
+      ml='15px'
+      width='140px'
       borderRadius='0px'
       position='absolute'
       flexDirection='column'
       top={or(props.popperTop, '20px')}
-      right={or(props.popperRight, '0px')}
+      // right={or(props.popperRight, '')}
       bg={themeGet('colors.lightGrey', '#292929')(props)}
-    // borderColor={themeGet('colors.mainOrange', '#9D8C70')(props)}
+      // borderColor={themeGet('colors.mainOrange', '#9D8C70')(props)}
     >
       {props.hovered && props.locale.languages.map((item) => (
         <TextLocaleCompomemt
-          m='5px'
-          width='170px'
+          m='8px'
+          width='140px'
           cursor='pointer'
           key={item.localeName}
           onClick={() => props.changeLocale(item.localeName)}
@@ -35,13 +40,12 @@ export const ChangeLocalePopover = withChangeLocale(props => (
           {item.value}
         </TextLocaleCompomemt>
       ))}
-
     </Flex>
     <TextLocale
-      > name name
+    > {H.getLocaleItem(['language'], props.locale)}
     </TextLocale>
   </LocalCompDisplay>
-));
+)));
 
 export const ChangeLocale = withHoveredStatus(props => (
   <Box

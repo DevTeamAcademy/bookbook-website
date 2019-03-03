@@ -54,6 +54,7 @@ export const withLocale = BaseComponent => props => (
 
 export const withChangeLocale = BaseComponent => props => (
   <LocaleContext.Consumer>
-    {localeState => <BaseComponent {...props} changeLocale={localeState.changeLocale} />}
+    {localeState => <BaseComponent {...props} localeName={localeState.localeName} changeLocale={localeState.changeLocale} />}
+
   </LocaleContext.Consumer>
 );

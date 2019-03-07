@@ -5,6 +5,8 @@ import PageLayout from '../../components/PageLayout';
 //ui
 import  { FooterLink } from '../../components/ui';
 import { Flex, Text } from '../../ui/index';
+// SectionTitle
+import SectionTitle from '../../components/SectionTitle';
 // helpers
 import * as H from '../../helpers';
 // hocs
@@ -22,14 +24,11 @@ export const AboutUsWrapper = (props) => (
       flexDirection='column'
       justifyContent='center'
     > 
+      <SectionTitle
+        titleText={H.getLocaleItem(['aboutUs'], props.locale)}
+      />
       <Text
-        py='30px'
-        color='#FBFBFB'
-        fontSize='36px'
-      >
-        {H.getLocaleItem(['aboutUs'], props.locale)}
-      </Text>
-      <Text
+        pt='25px'
         color='#FBFBFB'
         fontSize='18px'
         maxWidth='500px'

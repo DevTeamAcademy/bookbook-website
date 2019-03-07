@@ -304,6 +304,7 @@ export const TextLocale = styled(Box)`
   width: 140px;
   color: #FDE3A7;
   cursor: pointer;
+  padding-left: 5px;
   margin-left: 15px; 
   position: relative;
   border-bottom: 1.5px solid #9D8C70;
@@ -329,6 +330,12 @@ export const LocalCompDisplay = styled.div`
 
 export const TextLocaleCompomemt = styled(Text)`
   &:hover {
-    color: white;
+    color: #FDE3A7;
   };
+  &:nth-child(1) {
+    margin-top: 10px;
+  }
+  &:nth-child(4) {
+    margin-bottom: 10px;
+  }
 `;

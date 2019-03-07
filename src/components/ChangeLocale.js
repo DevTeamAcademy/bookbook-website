@@ -30,7 +30,7 @@ export const ChangeLocalePopover = withLocale(withChangeLocale(props => (
     >
       {props.hovered && props.locale.languages.map((item) => (
         <TextLocaleCompomemt
-          m='8px'
+          m='5px'
           width='140px'
           cursor='pointer'
           key={item.localeName}

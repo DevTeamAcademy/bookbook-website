@@ -6,11 +6,11 @@ import * as H from '../helpers';
 import locales from '../locale';
 // /////////////////////////////////////////////////////////////////////////////////////////////////
 
-const getLocale = () => H.ifElse(
-  H.isNotNilAndNotEmpty(H.getItemFromLocalStorage('localeName')),
-  H.getItemFromLocalStorage('localeName'),
-  GC.LOCALE_NAME_UA,
-);
+// const getLocale = () => H.ifElse(
+//   H.isNotNilAndNotEmpty(H.getItemFromLocalStorage('localeName')),
+//   H.getItemFromLocalStorage('localeName'),
+//   GC.LOCALE_NAME_UA,
+// );
 
 const LocaleContext = createContext();
 
@@ -26,7 +26,8 @@ class LocaleProvider extends Component {
   }
 
   componentDidMount() {
-    this.changeLocale(getLocale());
+    // TODO: check it
+    // this.changeLocale(getLocale());
   }
 
 

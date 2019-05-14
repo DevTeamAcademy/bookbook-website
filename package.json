@@ -20,7 +20,6 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-pose": "^4.0.4",
-    "react-testing-library": "^5.4.4",
     "react-pose-text": "^3.1.0",
     "recompose": "^0.30.0",
     "styled-components": "^4.1.2",
@@ -28,65 +27,19 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
     "babel-plugin-styled-components": "^1.9.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-jest-enzyme": "^7.0.1",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.1",
-    "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
-    "prettier": "^1.15.3",
-    "react-test-renderer": "^16.7.0"
-  },
-  "jest": {
-    "verbose": true,
-    "transform": {
-      ".*": "babel-jest"
-    },
-    "globals": {
-      "NODE_ENV": "test"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$",
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "source"
-    ],
-    "notify": true,
-    "moduleNameMapper": {
-      "^bookbook-website(.*)$": "<rootDir>/src$1",
-      "\\.(css)$": "identity-obj-proxy"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 50,
-        "functions": 50,
-        "lines": 50,
-        "statements": 50
-      },
-      "./src/components/": {
-        "branches": 40,
-        "statements": 40
-      },
-      "./src/pages/about/index.js": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    }
+    "prettier": "^1.15.3"
   },
   "scripts": {
     "lint": "eslint --debug src/",
@@ -95,8 +48,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export",
-    "test": "jest"
+    "export": "npm run build && next export"
   },
   "husky": {
     "hooks": {
